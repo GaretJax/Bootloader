@@ -1,0 +1,15 @@
+.. BNG Bootloader documentation master file, created by
+   sphinx-quickstart on Wed Mar 24 14:56:51 2010.
+
+BNG - BNG is Not Grub - Bootloader
+==================================
+
+.. todo::
+   Introduction to the project
+
+.. toctree::
+   :maxdepth: 2
+   
+   architecture/index.rst
+   specification/index.rst
+   todos.rst
