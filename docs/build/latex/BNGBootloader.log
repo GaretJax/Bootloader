@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2010.3.24)  24 MAR 2010 19:58
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2010.3.24)  25 MAR 2010 10:34
 entering extended mode
  %&-line parsing enabled.
 **BNGBootloader.tex
@@ -12,21 +12,22 @@ greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, ku
 rmanji, latin, latvian, lithuanian, mongolian, mongolian2a, bokmal, nynorsk, po
 lish, portuguese, romanian, russian, sanskrit, serbian, slovak, slovenian, span
 ish, swedish, turkish, ukenglish, ukrainian, uppersorbian, welsh, loaded.
-(./howto.cls
-Document Class: howto 2008/10/18 Document class (Sphinx HOWTO)
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(./manual.cls
+Document Class: manual 2008/10/18 Document class (Sphinx manual)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2009/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -263,7 +264,7 @@ Language: ngermanb 2008/07/06 v2.6n new German support from the babel system
 
 (/usr/local/texlive/2009/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2008/07/06 v3.8l Babel common definitions
-\babel@savecnt=\count87
+\babel@savecnt=\count88
 \U@D=\dimen103
 )
 \l@naustrian = a dialect from \language\l@ngerman 
@@ -286,16 +287,16 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTright=\skip51
 \LTpre=\skip52
 \LTpost=\skip53
-\LTchunksize=\count88
+\LTchunksize=\count89
 \LTcapwidth=\dimen104
 \LT@head=\box26
 \LT@firsthead=\box27
 \LT@foot=\box28
 \LT@lastfoot=\box29
-\LT@cols=\count89
-\LT@rows=\count90
-\c@LT@tables=\count91
-\c@LT@chunks=\count92
+\LT@cols=\count90
+\LT@rows=\count91
+\c@LT@tables=\count92
+\c@LT@chunks=\count93
 \LT@p@ftn=\toks16
 )
 (./sphinx.sty
@@ -487,7 +488,7 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip65
 \backup@length=\skip66
 )
-\TY@count=\count93
+\TY@count=\count94
 \TY@linewidth=\dimen113
 \tymin=\dimen114
 \tymax=\dimen115
@@ -512,13 +513,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/local/texlive/2009/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count94
+\inf@bad=\count95
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count95
-\leftroot@=\count96
+\uproot@=\count96
+\leftroot@=\count97
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count97
-\DOTSCASE@=\count98
+\classnum@=\count98
+\DOTSCASE@=\count99
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
@@ -527,15 +528,15 @@ LaTeX Info: Redefining \cdots on input line 467.
 \big@size=\dimen119
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count99
-\c@MaxMatrixCols=\count100
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
 \dotsspace@=\muskip10
-\c@parentequation=\count101
-\dspbrk@lvl=\count102
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
 \tag@help=\toks24
-\row@=\count103
-\column@=\count104
-\maxfields@=\count105
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
 \andhelp@=\toks25
 \eqnshift@=\dimen120
 \alignsep@=\dimen121
@@ -570,7 +571,7 @@ Package color Info: Driver file: pdftex.def on input line 130.
 
 (/usr/local/texlive/2009/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
-\Gread@gobject=\count106
+\Gread@gobject=\count107
 ))
 (/usr/local/texlive/2009/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
@@ -581,11 +582,11 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks28
 )
-\FV@CodeLineNo=\count107
+\FV@CodeLineNo=\count108
 \FV@InFile=\read2
 \FV@TabBox=\box35
-\c@FancyVerbLine=\count108
-\FV@StepNumber=\count109
+\c@FancyVerbLine=\count109
+\FV@StepNumber=\count110
 \FV@OutFile=\write4
 )
 (/usr/local/texlive/2009/texmf-dist/tex/latex/ltxmisc/threeparttable.sty
@@ -600,7 +601,7 @@ Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 (/usr/local/texlive/2009/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen131
 \WF@size=\dimen132
-\c@WF@wrappedlines=\count110
+\c@WF@wrappedlines=\count111
 \WF@box=\box38
 \WF@everypar=\toks29
 Package: wrapfig 2003/01/31  v 3.6
@@ -656,8 +657,8 @@ O)
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
 \@linkdim=\dimen136
-\Hy@linkcounter=\count111
-\Hy@pagecounter=\count112
+\Hy@linkcounter=\count112
+\Hy@pagecounter=\count113
 
 (/usr/local/texlive/2009/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -729,7 +730,7 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count113
+\Fld@menulength=\count114
 \Field@Width=\dimen137
 \Fld@charsize=\dimen138
 \Field@toks=\toks30
@@ -744,14 +745,14 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 (/usr/local/texlive/2009/texmf-dist/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count114
-\c@Item=\count115
-\c@Hfootnote=\count116
+\Hy@abspage=\count115
+\c@Item=\count116
+\c@Hfootnote=\count117
 )
 *hyperref using default driver hpdftex*
 (/usr/local/texlive/2009/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count117
+\Fld@listcount=\count118
 ))
 \@indexfile=\write5
 \openout5 = `BNGBootloader.idx'.
@@ -762,83 +763,85 @@ Writing index file BNGBootloader.idx
 (./BNGBootloader.aux)
 \openout1 = `BNGBootloader.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 105.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 105.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 104.
 
 
 (/usr/local/texlive/2009/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 105.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 104.
 
 (/usr/local/texlive/2009/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (/usr/local/texlive/2009/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
+\scratchcounter=\count119
 \scratchdimen=\dimen139
 \scratchbox=\box40
-\nofMPsegments=\count119
-\nofMParguments=\count120
+\nofMPsegments=\count120
+\nofMParguments=\count121
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count121
+\MPscratchCnt=\count122
 \MPscratchDim=\dimen140
-\MPnumerator=\count122
+\MPnumerator=\count123
 \everyMPtoPDFconversion=\toks32
 )
-Package hyperref Info: Link coloring ON on input line 105.
+Package hyperref Info: Link coloring ON on input line 104.
  (/usr/local/texlive/2009/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/local/texlive/2009/texmf-dist/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count123
+\c@section@level=\count124
 )
-LaTeX Info: Redefining \ref on input line 105.
-LaTeX Info: Redefining \pageref on input line 105.
+LaTeX Info: Redefining \ref on input line 104.
+LaTeX Info: Redefining \pageref on input line 104.
 
 (./BNGBootloader.out) (./BNGBootloader.out)
 \@outlinefile=\write7
 \openout7 = `BNGBootloader.out'.
 
 \AtBeginShipoutBox=\box41
+LaTeX Font Info:    Try loading font information for T1+phv on input line 107.
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--108
-
- []
-
-LaTeX Font Info:    Try loading font information for T1+phv on input line 108.
 (/usr/local/texlive/2009/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 108.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 108.
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <12> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 108.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 108.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 108.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 107.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <17.28> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 107.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <17.28> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 107.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <17.28> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 107.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 107.
+ [1
 
+\openout6 = `modBNGBootloader.idx'.
+
+{/usr/local/texlive/2009/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+]
 (./BNGBootloader.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
@@ -846,57 +849,90 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 \tf@toc=\write8
 \openout8 = `BNGBootloader.toc'.
 
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 118.
- <overview.png, id=38, 795.97375pt x 559.08875pt>
-File: overview.png Graphic file (type png)
 
-<use overview.png>
+Adding blank page after the table of contents.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 107.
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.107 \tableofcontents
+                       [1
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.107 \tableofcontents
+                       [2] [1
+
+] [2
+
+]
+Kapitel 1.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 116.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 120.
+
+(/usr/local/texlive/2009/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+<overview.png, id=73, 795.97375pt x 559.08875pt>
 File: overview.png Graphic file (type png)
  <use overview.png>
-<app-manager.png, id=40, 563.10374pt x 521.95pt>
+File: overview.png Graphic file (type png)
+
+<use overview.png> <app-manager.png, id=75, 563.10374pt x 521.95pt>
+File: app-manager.png Graphic file (type png)
+
+<use app-manager.png>
 File: app-manager.png Graphic file (type png)
  <use app-manager.png>
-File: app-manager.png Graphic file (type png)
-
-<use app-manager.png> <serial-driver.png, id=41, 386.44376pt x 184.69pt>
+<serial-driver.png, id=76, 386.44376pt x 184.69pt>
+File: serial-driver.png Graphic file (type png)
+ <use serial-driver.png>
 File: serial-driver.png Graphic file (type png)
 
-<use serial-driver.png>
-File: serial-driver.png Graphic file (type png)
- <use serial-driver.png> [1
-
-\openout6 = `modBNGBootloader.idx'.
-
-{/usr/local/texlive/2009/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \vbox (426.61406pt too high) has occurred while \output is active []
+<use serial-driver.png> [3] [4]
+Overfull \vbox (415.86572pt too high) has occurred while \output is active []
 
 
-[3 <./overview.png> <./app-manager.png> <./serial-driver.png>]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 142.
+[5 <./overview.png> <./app-manager.png> <./serial-driver.png>] [6
 
+]
+Kapitel 2.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 166.
 (/usr/local/texlive/2009/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [4]
-(./modBNGBootloader.ind) (./BNGBootloader.ind) [5] (./BNGBootloader.aux) ) 
+) [7] [8]
+Kapitel 3.
+[9
+
+] [10
+
+]
+Kapitel 4.
+(./modBNGBootloader.ind) (./BNGBootloader.ind) [11] (./BNGBootloader.aux) ) 
 Here is how much of TeX's memory you used:
- 7891 strings out of 493848
- 108180 string characters out of 3149207
- 187343 words of memory out of 3000000
- 10967 multiletter control sequences out of 15000+200000
- 39677 words of font info for 43 fonts, out of 3000000 for 9000
+ 7942 strings out of 493848
+ 108793 string characters out of 3149207
+ 187000 words of memory out of 3000000
+ 11002 multiletter control sequences out of 15000+200000
+ 48315 words of font info for 50 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 45i,6n,45p,259b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr
-/local/texlive/2009/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/
-2009/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2009/tex
-mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2009/texmf-dist
-/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2009/texmf-dist/fonts
-/type1/urw/times/utmb8a.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/urw
-/times/utmr8a.pfb>
-Output written on BNGBootloader.pdf (5 pages, 148383 bytes).
+ 45i,11n,45p,259b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/us
+r/local/texlive/2009/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive
+/2009/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2009/te
+xmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2009/texmf-dis
+t/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2009/texmf-dist/font
+s/type1/urw/times/utmb8a.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/ur
+w/times/utmr8a.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/urw/times/ut
+mri8a.pfb>
+Output written on BNGBootloader.pdf (15 pages, 168752 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
- 72 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 156 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
+ 80 words of extra memory for PDF output out of 10000 (max. 10000000)
 
