@@ -22,7 +22,7 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.todo', 'sphinx.ext.pngmath']
+extensions = ['sphinx.ext.todo', 'sphinx.ext.pngmath', 'sphinxtogithub',]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['.templates']
@@ -192,3 +192,8 @@ latex_documents = [
 
 # If false, no module index is generated.
 #latex_use_modindex = True
+
+todo_include_todos = True
+
+sphinx_to_github = True
+sphinx_to_github_verbose = True
