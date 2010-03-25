@@ -10,6 +10,10 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   
+   architecture/index
+   specification/index
+   todos
 
 Indices and tables
 ==================
