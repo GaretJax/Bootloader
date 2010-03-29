@@ -14,6 +14,7 @@ Contents:
    architecture/index
    specification/index
    development
+   appendices/index
    todos
 
 Indices and tables
