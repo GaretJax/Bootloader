@@ -13,6 +13,7 @@ Contents:
    
    architecture/index
    specification/index
+   development
    todos
 
 Indices and tables
