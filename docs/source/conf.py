@@ -193,7 +193,7 @@ latex_documents = [
 # If false, no module index is generated.
 #latex_use_modindex = True
 
-todo_include_todos = True
+todo_include_todos = False
 
 sphinx_to_github = True
 sphinx_to_github_verbose = True

@@ -1,10 +1,6 @@
 Architektur
 ===========
 
-.. todo::
-   * Add image for Command Parser
-   * Format subtitles
-
 Überblick
 ---------
 
@@ -16,27 +12,27 @@ Application Manager
 
 .. image:: images/app-manager.png
 
-Die Aufgabe der Application Manager ist es, den aktuellen Ihnalt des
-Flashspeichers in den Arbeitsspeicher zu laden.
+Die Aufgabe der Application Manager ist es, den Applikations-verzeichnis zu
+verwalten und den aktuellen Ihnalt des Flashspeichers in den Arbeitsspeicher zu laden.
 
 
 Flash Access API
+~~~~~~~~~~~~~~~~
 
-Mit der Flash Access API können entweder Flashspeicher, Arbeitsspeicher oder Festplatte benutzt werden. Die drei Hauptfunktionen
-der API werden lesen, schreiben und löschen sein.
+Mit der Flash Access API können entweder Flashspeicher, Arbeitsspeicher oder
+Festplatte benutzt werden. Die drei Hauptfunktionen der API werden lesen,
+schreiben und löschen sein.
 Der Zugriff auf den Flashspeicher ist nur mittels Mikrokontroller MC68332 möglich (Zielplattform). 
 Lesen und/oder Schreiben auf Arbeitsspeicher oder Festplatte sind für Testzwecke gedacht (Debugging).
 
 
 Application Register Wrapper
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Damit wir nicht direkt mit der Flash API gearbeitet werden muss, übernimmt der
 Application Register Wrapper die Ansteuerung der Flash Access API. Dies
 erleichtert das Entwickeln des Bootloaders und ermöglicht den Code des
 Application Manager übersichtlich zu gestalten.
-
-
-
 
 
 Serial Interface Driver
@@ -54,5 +50,6 @@ Damit wir die Serielle Schnittstelle in unserer Testumbebung emulieren können w
 
 Command Parser
 --------------
+
 Der Command Parser analysiert die einkommenden Befehle des Benutzerkeyboards
 und delegiert das Aufrufen der entsprechenden Methoden (siehe Commands).
