@@ -48,24 +48,45 @@
             
   <div class="section" id="architektur">
 <h1>Architektur<a class="headerlink" href="#architektur" title="Permalink zu dieser Überschrift">¶</a></h1>
-<div class="admonition-zu-tun admonition " id="todo-0">
-<p class="first admonition-title">Zu tun</p>
-<ul class="last simple">
-<li>Explain what are APIs and why we need them</li>
-<li>Describe the different components</li>
-</ul>
-</div>
 <div class="section" id="uberblick">
 <h2>Überblick<a class="headerlink" href="#uberblick" title="Permalink zu dieser Überschrift">¶</a></h2>
 <img alt="../images/overview.png" src="../images/overview.png" />
 </div>
-<div class="section" id="applikation-manager">
-<h2>Applikation manager<a class="headerlink" href="#applikation-manager" title="Permalink zu dieser Überschrift">¶</a></h2>
+<div class="section" id="application-manager">
+<h2>Application Manager<a class="headerlink" href="#application-manager" title="Permalink zu dieser Überschrift">¶</a></h2>
 <img alt="../images/app-manager.png" src="../images/app-manager.png" />
+<p>Die Aufgabe der Application Manager ist es, den Applikations-verzeichnis zu
+verwalten und den aktuellen Ihnalt des Flashspeichers in den Arbeitsspeicher zu laden.</p>
+<div class="section" id="flash-access-api">
+<h3>Flash Access API<a class="headerlink" href="#flash-access-api" title="Permalink zu dieser Überschrift">¶</a></h3>
+<p>Mit der Flash Access API können entweder Flashspeicher, Arbeitsspeicher oder
+Festplatte benutzt werden. Die drei Hauptfunktionen der API werden lesen,
+schreiben und löschen sein.
+Der Zugriff auf den Flashspeicher ist nur mittels Mikrokontroller MC68332 möglich (Zielplattform).
+Lesen und/oder Schreiben auf Arbeitsspeicher oder Festplatte sind für Testzwecke gedacht (Debugging).</p>
+</div>
+<div class="section" id="application-register-wrapper">
+<h3>Application Register Wrapper<a class="headerlink" href="#application-register-wrapper" title="Permalink zu dieser Überschrift">¶</a></h3>
+<p>Damit wir nicht direkt mit der Flash API gearbeitet werden muss, übernimmt der
+Application Register Wrapper die Ansteuerung der Flash Access API. Dies
+erleichtert das Entwickeln des Bootloaders und ermöglicht den Code des
+Application Manager übersichtlich zu gestalten.</p>
+</div>
 </div>
 <div class="section" id="serial-interface-driver">
-<h2>Serial interface driver<a class="headerlink" href="#serial-interface-driver" title="Permalink zu dieser Überschrift">¶</a></h2>
+<h2>Serial Interface Driver<a class="headerlink" href="#serial-interface-driver" title="Permalink zu dieser Überschrift">¶</a></h2>
 <img alt="../images/serial-driver.png" src="../images/serial-driver.png" />
+<p>Der Serial Interface Driver ermöglicht die Kommunikation zwischen Zielplattform (MC68332)
+und Benutzer des Bootloader. Mittels eines Keyboards und einem Terminal werden
+Zeichen an den Mikrokontroller geschickt und das Resultat vom Kontroller
+anschliessend wieder an den Benutzer zurück geschickt. Funktionen wie
+put_char oder get_char müssen hier implementiert werden.
+Damit wir die Serielle Schnittstelle in unserer Testumbebung emulieren können werden wir ein Socket benutzen.</p>
+</div>
+<div class="section" id="command-parser">
+<h2>Command Parser<a class="headerlink" href="#command-parser" title="Permalink zu dieser Überschrift">¶</a></h2>
+<p>Der Command Parser analysiert die einkommenden Befehle des Benutzerkeyboards
+und delegiert das Aufrufen der entsprechenden Methoden (siehe Commands).</p>
 </div>
 </div>
 
@@ -79,8 +100,13 @@
             <ul>
 <li><a class="reference external" href="#">Architektur</a><ul>
 <li><a class="reference external" href="#uberblick">Überblick</a></li>
-<li><a class="reference external" href="#applikation-manager">Applikation manager</a></li>
-<li><a class="reference external" href="#serial-interface-driver">Serial interface driver</a></li>
+<li><a class="reference external" href="#application-manager">Application Manager</a><ul>
+<li><a class="reference external" href="#flash-access-api">Flash Access API</a></li>
+<li><a class="reference external" href="#application-register-wrapper">Application Register Wrapper</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#serial-interface-driver">Serial Interface Driver</a></li>
+<li><a class="reference external" href="#command-parser">Command Parser</a></li>
 </ul>
 </li>
 </ul>

@@ -6,21 +6,20 @@
 Welcome to BNG Bootloader's documentation!
 ==========================================
 
-Contents:
+.. todo::
+   * Einführung zum Projekt.
 
 .. toctree::
    :maxdepth: 2
    
    architecture/index
    specification/index
-   development
    appendices/index
-   todos
 
-Indices and tables
-==================
+.. Indices and tables
+   ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   * :ref:`genindex`
+   * :ref:`modindex`
+   * :ref:`search`
 
