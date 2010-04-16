@@ -18,7 +18,7 @@ Befehle
 
 ---------------
 
-``download [-b app-id [-d]]``
+``download [-b app-name [-d]]``
 
   Lädt die folgenden Daten in den Arbeitsspeicher als eine SRecord Datei.
   
@@ -27,9 +27,9 @@ Befehle
 
 ---------------
 
-``burn app-id [-d]``
+``burn app-name [-d]``
 
-  Speichert das sich im Arbeitsspeicher befindende SRecordFile in den Flashspeicher unter dem Namen ``app-id``.
+  Speichert das sich im Arbeitsspeicher befindende SRecordFile in den Flashspeicher unter dem Namen ``app-name``.
   
   -d                     Setzt die zu brennende Applikation als default Startanwendung
 
@@ -65,7 +65,7 @@ Befehle
 
 ``bootconfig``
 
-  Führt die aktuelle Konfiguration (app-id, timeout, errorcount) des Bootloaders auf.
+  Führt die aktuelle Konfiguration (app-name, timeout, errorcount) des Bootloaders auf.
 
 ---------------
 
