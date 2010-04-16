@@ -6,13 +6,17 @@ Architektur
 
 .. image:: images/overview.png
 
+In der obenstehenden Gesammtübersicht sind die einzelnen Komponenten und deren Verknüpfung dargestellt.
+Im folgenden Kapitel wird die Architektur der jeweiligen Komponenten näher
+beschrieben.
 
-Application Manager
+
+Application Driver
 -------------------
 
 .. image:: images/app-manager.png
 
-Die Aufgabe der Application Manager ist es, den Applikations-verzeichnis zu
+Die Aufgabe der Application Driver ist es, das Applikationsverzeichnis zu
 verwalten und den aktuellen Ihnalt des Flashspeichers in den Arbeitsspeicher zu laden.
 
 
@@ -20,8 +24,8 @@ Flash Access API
 ~~~~~~~~~~~~~~~~
 
 Mit der Flash Access API können entweder Flashspeicher, Arbeitsspeicher oder
-Festplatte benutzt werden. Die drei Hauptfunktionen der API werden lesen,
-schreiben und löschen sein.
+Festplatte benutzt werden. Die drei Hauptfunktionen der API sind lesen,
+schreiben und löschen.
 Der Zugriff auf den Flashspeicher ist nur mittels Mikrokontroller MC68332 möglich (Zielplattform). 
 Lesen und/oder Schreiben auf Arbeitsspeicher oder Festplatte sind für Testzwecke gedacht (Debugging).
 
@@ -29,10 +33,10 @@ Lesen und/oder Schreiben auf Arbeitsspeicher oder Festplatte sind für Testzweck
 Application Register Wrapper
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Damit wir nicht direkt mit der Flash API gearbeitet werden muss, übernimmt der
+Damit nicht direkt mit der Flash API gearbeitet werden muss, übernimmt der
 Application Register Wrapper die Ansteuerung der Flash Access API. Dies
 erleichtert das Entwickeln des Bootloaders und ermöglicht den Code des
-Application Manager übersichtlich zu gestalten.
+Application Driver übersichtlich zu gestalten.
 
 
 Serial Interface Driver
