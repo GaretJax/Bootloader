@@ -15,13 +15,41 @@ Ein (Druck-geeignetes) PDF und das originale MS Project Dokument sind auch verf√
 * `Planung MS Project Dokument <../static/planung.mpp>`_
 
 
-Anlage 2: Entwicklungs-prozess und -ressourcen
+Anlage 2: Entwicklungs-prozess
 ----------------------------------------------
 
 Das ganze Projekt wird auf github (http://github.com) verwaltet.
 
 * Git Repository auf github: http://github.com/garetjax/Bootloader
-* Letzer Build der Dokumentation: http://garetjax.github.com/Bootloader/
+
+.. todo::
+   * Add description of the documentation build process.
+
+
+Anlage 3: Ressourcen
+--------------------
+
+Interne ressourcen
+~~~~~~~~~~~~~~~~~~
+
+ * HTML Build der dokumentation: http://garetjax.github.com/Bootloader
+ * HTML Build der spezifikation: http://garetjax.github.com/Bootloader/api/
+ * PDF Build der dokumentation: http://garetjax.github.com/Bootloader/static/documentation.pdf
+ * PDF Build der spezifikation: http://garetjax.github.com/Bootloader/static/api.pdf
+
+Externe ressourcen
+~~~~~~~~~~~~~~~~~~
+
+ * Git: http://git-scm.com/
+ * Sphinx: http://sphinx.pocoo.org
+ * Doxygen: http://www.stack.nl/~dimitri/doxygen/
+
+
+Anlage 4: Referenzen
+--------------------
+
+.. todo::
+   * Referenzen liste
 
 
 Anlage 3: TODOs

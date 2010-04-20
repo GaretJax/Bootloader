@@ -7,7 +7,8 @@ Welcome to BNG Bootloader's documentation!
 ==========================================
 
 .. todo::
-   * Einführung zum Projekt.
+   * Ergänzugen gemäss korrekturen
+   
 
 
 .. toctree::
