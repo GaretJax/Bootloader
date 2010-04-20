@@ -1,0 +1,111 @@
+Tbootloader
+v7
+r0
+t293420299.012120
+cCheck dependencies
+cCompileC build/bootloader.build/Debug/bootloader.build/Objects-normal/x86_64/main.o /Users/garetjax/Versioning/git/Bootloader/source/main.c normal x86_64 c com.apple.compilers.gcc.4_2
+cLd /Users/garetjax/Versioning/git/Bootloader/source/build/Debug/bootloader normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
+c000000004A5C14A70000000000004174
+t1247548583
+s16756
+
+N/Users/garetjax/Versioning/git/Bootloader/source/application/manager.h
+c000000004BCD04E900000000000009EC
+t1271727337
+s2540
+i"../storage/persistent.h"
+i"../storage/volatile.h"
+i"../configuration/registry.h"
+
+N/Users/garetjax/Versioning/git/Bootloader/source/build/Debug/bootloader
+t1271727499
+s8952
+
+N/Users/garetjax/Versioning/git/Bootloader/source/build/bootloader.build/Debug/bootloader.build/Objects-normal/x86_64/bootloader.LinkFileList
+c000000004BCD058A000000000000007C
+t1271727498
+s124
+
+N/Users/garetjax/Versioning/git/Bootloader/source/build/bootloader.build/Debug/bootloader.build/Objects-normal/x86_64/main.o
+t1271727498
+s2524
+
+N/Users/garetjax/Versioning/git/Bootloader/source/commands/dispatcher.h
+c000000004BCD04E90000000000000743
+t1271727337
+s1859
+i"registry.h"
+
+N/Users/garetjax/Versioning/git/Bootloader/source/commands/registry.h
+c000000004BCD04E900000000000007A3
+t1271727337
+s1955
+
+N/Users/garetjax/Versioning/git/Bootloader/source/configuration/registry.h
+c000000004BCD04E90000000000000833
+t1271727337
+s2099
+i"../storage/persistent.h"
+
+N/Users/garetjax/Versioning/git/Bootloader/source/io/serial.h
+c000000004BCD04E90000000000000C1B
+t1271727337
+s3099
+
+N/Users/garetjax/Versioning/git/Bootloader/source/main.c
+c000000004BCD0666000000000000096F
+t1271727718
+s2415
+i<stdio.h>
+i"storage/persistent.h"
+i"storage/volatile.h"
+i"io/serial.h"
+i"configuration/registry.h"
+i"commands/registry.h"
+i"commands/dispatcher.h"
+i"application/manager.h"
+
+N/Users/garetjax/Versioning/git/Bootloader/source/storage/persistent.h
+c000000004BCD04E900000000000008FD
+t1271727337
+s2301
+
+N/Users/garetjax/Versioning/git/Bootloader/source/storage/volatile.h
+c000000004BCD04E900000000000006BF
+t1271727337
+s1727
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies293420298#293420298#0(0"0(0#1#0"7947009927035180032#0"0#
+
+CCompileC build/bootloader.build/Debug/bootloader.build/Objects-normal/x86_64/main.o /Users/garetjax/Versioning/git/Bootloader/source/main.c normal x86_64 c com.apple.compilers.gcc.4_2
+s293420298.936867
+e293420298.969245
+r1
+xCompileC
+xbuild/bootloader.build/Debug/bootloader.build/Objects-normal/x86_64/main.o
+x/Users/garetjax/Versioning/git/Bootloader/source/main.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@63"Compile /Users/garetjax/Versioning/git/Bootloader/source/main.c293420298#293420298#0(0"0(0#0#55"/Users/garetjax/Versioning/git/Bootloader/source/main.c3275089324280537600#1434"    cd /Users/garetjax/Versioning/git/Bootloader/source    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/garetjax/Versioning/git/Bootloader/source/build/bootloader.build/Debug/bootloader.build/bootloader-generated-files.hmap -I/Users/garetjax/Versioning/git/Bootloader/source/build/bootloader.build/Debug/bootloader.build/bootloader-own-target-headers.hmap -I/Users/garetjax/Versioning/git/Bootloader/source/build/bootloader.build/Debug/bootloader.build/bootloader-all-target-headers.hmap -iquote /Users/garetjax/Versioning/git/Bootloader/source/build/bootloader.build/Debug/bootloader.build/bootloader-project-headers.hmap -F/Users/garetjax/Versioning/git/Bootloader/source/build/Debug -I/Users/garetjax/Versioning/git/Bootloader/source/build/Debug/include -I/Users/garetjax/Versioning/git/Bootloader/source/build/bootloader.build/Debug/bootloader.build/DerivedSources/x86_64 -I/Users/garetjax/Versioning/git/Bootloader/source/build/bootloader.build/Debug/bootloader.build/DerivedSources -c /Users/garetjax/Versioning/git/Bootloader/source/main.c -o /Users/garetjax/Versioning/git/Bootloader/source/build/bootloader.build/Debug/bootloader.build/Objects-normal/x86_64/main.o0#
+
+CLd /Users/garetjax/Versioning/git/Bootloader/source/build/Debug/bootloader normal x86_64
+s293420298.969341
+e293420299.012062
+r1
+xLd
+x/Users/garetjax/Versioning/git/Bootloader/source/build/Debug/bootloader
+xnormal
+xx86_64
+lSLF07#2@76"Link /Users/garetjax/Versioning/git/Bootloader/source/build/Debug/bootloader293420298#293420299#0(0"0(0#0#0"30399748463984736#560"    cd /Users/garetjax/Versioning/git/Bootloader/source    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/garetjax/Versioning/git/Bootloader/source/build/Debug -F/Users/garetjax/Versioning/git/Bootloader/source/build/Debug -filelist /Users/garetjax/Versioning/git/Bootloader/source/build/bootloader.build/Debug/bootloader.build/Objects-normal/x86_64/bootloader.LinkFileList -mmacosx-version-min=10.6 -o /Users/garetjax/Versioning/git/Bootloader/source/build/Debug/bootloader0#
+
