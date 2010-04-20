@@ -1,0 +1,76 @@
+\section{commands/registry.h File Reference}
+\label{dc/d40/commands_2registry_8h}\index{commands/registry.h@{commands/registry.h}}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=83pt]{d8/d06/commands_2registry_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ {\bf Command} )(int argc, const char $\ast$argv[$\,$])
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf command\_\-registry\_\-register} (const char $\ast$name, {\bf Command} cmd)
+\item 
+int {\bf command\_\-registry\_\-unregister} (const char $\ast$name)
+\item 
+{\bf Command} {\bf command\_\-registry\_\-get} (const char $\ast$name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A registry which allows to add, remove and get pointers to Command like functions using a given name as identifier. This data structure is mainly used by the dispatcher to store all the known commands and retrieve them by name. 
+
+Definition in file {\bf registry.h}.
+
+
+
+\subsection{Typedef Documentation}
+\index{commands/registry.h@{commands/registry.h}!Command@{Command}}
+\index{Command@{Command}!commands/registry.h@{commands/registry.h}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$  {\bf Command})(int argc, const char $\ast$argv[$\,$])}\label{dc/d40/commands_2registry_8h_ac0200b58bf9c0740f333a0e05cf5b110}
+The interface which all functions used as commands have to implement. The interface is similar to the required prototype for the {\ttfamily main} method; it takes an {\itshape argc\/} argument indicating the number of arguments and an {\ttfamily argv} argument which points to an array of strings, already splitted by the command parser. The function must return 0 if completed successfully or a custom positive error code if it fails. 
+
+Definition at line 22 of file registry.h.
+
+
+
+\subsection{Function Documentation}
+\index{commands/registry.h@{commands/registry.h}!command\_\-registry\_\-get@{command\_\-registry\_\-get}}
+\index{command\_\-registry\_\-get@{command\_\-registry\_\-get}!commands/registry.h@{commands/registry.h}}
+\subsubsection[{command\_\-registry\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Command} command\_\-registry\_\-get (const char $\ast$ {\em name})}\label{dc/d40/commands_2registry_8h_aa752f6a6d85b4df8dd793e77a41fc481}
+Retrieves and returns the command identified by the given name.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em name}]The string indicating the name of the command to retrieve.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The command if a value existed for the key name, NULL otherwise. 
+\end{DoxyReturn}
+\index{commands/registry.h@{commands/registry.h}!command\_\-registry\_\-register@{command\_\-registry\_\-register}}
+\index{command\_\-registry\_\-register@{command\_\-registry\_\-register}!commands/registry.h@{commands/registry.h}}
+\subsubsection[{command\_\-registry\_\-register}]{\setlength{\rightskip}{0pt plus 5cm}int command\_\-registry\_\-register (const char $\ast$ {\em name}, \/  {\bf Command} {\em cmd})}\label{dc/d40/commands_2registry_8h_a8c6774df2e791b763852a8adc93630fc}
+Adds a given command to the commands registry using the given name. If a command was already registered with the same name, it is overwritten.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em name}]The string indicating the name to use to identify the command. \item[\mbox{$\leftarrow$} {\em cmd}]The pointer to the command function to register under the given name.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the value was read correctly, a negative error code otherwise. 
+\end{DoxyReturn}
+\index{commands/registry.h@{commands/registry.h}!command\_\-registry\_\-unregister@{command\_\-registry\_\-unregister}}
+\index{command\_\-registry\_\-unregister@{command\_\-registry\_\-unregister}!commands/registry.h@{commands/registry.h}}
+\subsubsection[{command\_\-registry\_\-unregister}]{\setlength{\rightskip}{0pt plus 5cm}int command\_\-registry\_\-unregister (const char $\ast$ {\em name})}\label{dc/d40/commands_2registry_8h_a4c7b6bcad28ffae2335631c8f9fa6c45}
+Removes the command identified by the given name from the command registry.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em name}]The string indicating the name of the command to remove.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command was removed correctly, 1 if it was not found and a negative error code if an error occurred. 
+\end{DoxyReturn}

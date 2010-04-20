@@ -1,0 +1,89 @@
+\label{dd/da0/todo__todo000006}
+ 
+\begin{DoxyDescription}
+\item[page \doxyref{API Specification}{p.}{main} ]Move this documentation to another file or to the Sphinx documentation.
+
+
+\end{DoxyDescription}
+
+\label{dd/da0/todo__todo000002}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{application\_\-run}{p.}{db/d45/manager_8h_afa031199ed298d4b9c5326db517d1c12}() ]Will this method ever return if the application starts correctly?
+
+
+\end{DoxyDescription}
+
+\label{dd/da0/todo__todo000001}
+ 
+\begin{DoxyDescription}
+\item[File \doxyref{manager.h}{p.}{db/d45/manager_8h} ]How can we read the name of a given application? Should we provide a function here or do we read the value directly from the configuration registry? 
+\end{DoxyDescription}
+
+\label{dd/da0/todo__todo000009}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{pstorage\_\-erase}{p.}{de/de8/persistent_8h_a8e482bb6a9f9c962141bd09628fb621e}(void $\ast$address, int length) ]Define the possible error numbers and their respective meaning.
+
+
+\end{DoxyDescription}
+
+\label{dd/da0/todo__todo000007}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{pstorage\_\-read}{p.}{de/de8/persistent_8h_a04909bd2b94fc99ff1b2362a222b02df}(char $\ast$buffer, void $\ast$address, int length) ]Define the possible error numbers and their respective meaning.
+
+
+\end{DoxyDescription}
+
+\label{dd/da0/todo__todo000008}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{pstorage\_\-write}{p.}{de/de8/persistent_8h_aac8f890e18a7efc92da006f99bd27da0}(const char $\ast$buffer, void $\ast$address, int length) ]Define the possible error numbers and their respective meaning.
+
+
+\end{DoxyDescription}
+
+\label{dd/da0/todo__todo000003}
+ 
+\begin{DoxyDescription}
+\item[File \doxyref{registry.h}{p.}{d4/d64/configuration_2registry_8h} ]Define the values in the {\ttfamily CONFIG\_\-KEY} enum. 
+
+Should we make this interface more generic and not define the config keys using enum values? This woul allow for non hard coded keys but we loose compile-\/time error checking. If we change the interface in the described way, there will be the need for a {\ttfamily config\_\-clear} function. 
+
+The two get/set functions are very generic and involve a relatively large amount of code to be used, wouldn't it be better to define the different types of the configuration directives (mainly strings and ints) and to offer type-\/specific getters and setters (i.e. {\ttfamily config\_\-get\_\-int})? 
+\end{DoxyDescription}
+
+\label{dd/da0/todo__todo000004}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{serial\_\-readchar}{p.}{db/d11/serial_8h_a4650ddb52ffe6a8395efb315ee5fa286}() ]How can we handle errors of this function? Setting a timeout limit and a special return code could do the trick.
+
+
+\end{DoxyDescription}
+
+\label{dd/da0/todo__todo000005}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{serial\_\-readline}{p.}{db/d11/serial_8h_abd6ad4a121321105cea5607b5009ff6e}(char $\ast$buffer) ]Should we set a timeout option? Should we allow to configure the char sequence to identify a line break ($\backslash$n, $\backslash$r$\backslash$n or $\backslash$r)? 
+
+Define the possible error numbers and their respective meaning.
+
+
+\end{DoxyDescription}
+
+\label{dd/da0/todo__todo000010}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{vstorage\_\-read}{p.}{d2/dc4/volatile_8h_a0a12c5736c6deb1289081f8c102ca28e}(char $\ast$buffer, void $\ast$address, int length) ]Define the possible error numbers and their respective meaning.
+
+
+\end{DoxyDescription}
+
+\label{dd/da0/todo__todo000011}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{vstorage\_\-write}{p.}{d2/dc4/volatile_8h_acdf6b24f662a99d642769d4c12473dc8}(const char $\ast$buffer, void $\ast$address, int length) ]Define the possible error numbers and their respective meaning.
+
+
+\end{DoxyDescription}

@@ -1,0 +1,69 @@
+\section{storage/persistent.h File Reference}
+\label{de/de8/persistent_8h}\index{storage/persistent.h@{storage/persistent.h}}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=82pt]{d2/d22/persistent_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf pstorage\_\-read} (char $\ast$buffer, void $\ast$address, int length)
+\item 
+int {\bf pstorage\_\-write} (const char $\ast$buffer, void $\ast$address, int length)
+\item 
+int {\bf pstorage\_\-erase} (void $\ast$address, int length)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface to read/write/erase operations on a persistent storage device.
+
+The prototypes contained in this file can be implemented multiple times to be adapted to different storage devices such as Hard Disk Drives, Flash memory devices or RAMs (i.e. for development and testing purposes). 
+
+Definition in file {\bf persistent.h}.
+
+
+
+\subsection{Function Documentation}
+\index{persistent.h@{persistent.h}!pstorage\_\-erase@{pstorage\_\-erase}}
+\index{pstorage\_\-erase@{pstorage\_\-erase}!persistent.h@{persistent.h}}
+\subsubsection[{pstorage\_\-erase}]{\setlength{\rightskip}{0pt plus 5cm}int pstorage\_\-erase (void $\ast$ {\em address}, \/  int {\em length})}\label{de/de8/persistent_8h_a8e482bb6a9f9c962141bd09628fb621e}
+Deletes some data from the permanent storage handler compiled with this function.
+
+\begin{Desc}
+\item[{\bf Todo}]Define the possible error numbers and their respective meaning.\end{Desc}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em address}]The address from which to start to delete the data from the storage device. \item[\mbox{$\leftarrow$} {\em length}]The number of bytes to delete from the storage device, starting at the given address.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes deleted, a negative number if an error occurred. 
+\end{DoxyReturn}
+\index{persistent.h@{persistent.h}!pstorage\_\-read@{pstorage\_\-read}}
+\index{pstorage\_\-read@{pstorage\_\-read}!persistent.h@{persistent.h}}
+\subsubsection[{pstorage\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}int pstorage\_\-read (char $\ast$ {\em buffer}, \/  void $\ast$ {\em address}, \/  int {\em length})}\label{de/de8/persistent_8h_a04909bd2b94fc99ff1b2362a222b02df}
+Reads some data from the permanent storage handler compiled with this function.
+
+\begin{Desc}
+\item[{\bf Todo}]Define the possible error numbers and their respective meaning.\end{Desc}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em buffer}]The pointer to a char buffer where the read data has to be written. \item[\mbox{$\leftarrow$} {\em address}]The address from which to start to read from the storage device. \item[\mbox{$\leftarrow$} {\em length}]The number of bytes to read from the storage device, starting at the given address.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read, a negative number if an error occurred. 
+\end{DoxyReturn}
+\index{persistent.h@{persistent.h}!pstorage\_\-write@{pstorage\_\-write}}
+\index{pstorage\_\-write@{pstorage\_\-write}!persistent.h@{persistent.h}}
+\subsubsection[{pstorage\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}int pstorage\_\-write (const char $\ast$ {\em buffer}, \/  void $\ast$ {\em address}, \/  int {\em length})}\label{de/de8/persistent_8h_aac8f890e18a7efc92da006f99bd27da0}
+Writes some data to the permanent storage handler compiled with this function.
+
+\begin{Desc}
+\item[{\bf Todo}]Define the possible error numbers and their respective meaning.\end{Desc}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em buffer}]The pointer to a char buffer from where the data to write has to be read. \item[\mbox{$\leftarrow$} {\em address}]The address from which to start to write to the storage device. \item[\mbox{$\leftarrow$} {\em length}]The number of bytes to write to the storage device, starting at the given address.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written, a negative number if an error occurred. 
+\end{DoxyReturn}

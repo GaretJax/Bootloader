@@ -1,0 +1,135 @@
+.TH "application/manager.h" 3 "20 Apr 2010" "Version 0.2" "BNG Bootloader" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+application/manager.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '../storage/persistent.h'\fP
+.br
+\fC#include '../storage/persistent.h'\fP
+.br
+
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAPPLICATION_ID\fP { \fBAPP_0\fP, \fBAPP_1\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBapplication_load\fP (enum \fBAPPLICATION_ID\fP appid)"
+.br
+.ti -1c
+.RI "int \fBapplication_run\fP ()"
+.br
+.ti -1c
+.RI "int \fBapplication_add\fP (enum \fBAPPLICATION_ID\fP appid, const char *name, const char *buffer)"
+.br
+.ti -1c
+.RI "int \fBapplication_remove\fP (enum \fBAPPLICATION_ID\fP appid)"
+.br
+.ti -1c
+.RI "int \fBapplication_rename\fP (enum \fBAPPLICATION_ID\fP appid, const char *name)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Application management utilitites. This functions allow to run, add and manage existing applications.
+.PP
+\fBTodo\fP
+.RS 4
+How can we read the name of a given application? Should we provide a function here or do we read the value directly from the configuration registry? 
+.RE
+.PP
+
+.PP
+Definition in file \fBmanager.h\fP.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBAPPLICATION_ID\fP"The different IDs given to the application which can possibly be hosted on the target system. The number of values in the enumeration gives the maximum number of application which can coexist on the target. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIAPP_0 \fP\fP
+.TP
+\fB\fIAPP_1 \fP\fP
+
+.PP
+Definition at line 25 of file manager.h.
+.SH "Function Documentation"
+.PP 
+.SS "int application_add (enum \fBAPPLICATION_ID\fP appid, const char * name, const char * buffer)"Adds the application at \fIbuffer\fP to the slot identified by \fIappid\fP, giving it the name \fIname\fP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIappid\fP The slot to which write the application to the persistent storage. 
+.br
+\fIname\fP The human readable name to give to this application. 
+.br
+\fIbuffer\fP The buffer from which to read the application to be written.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 if the operation completed successfully, an error code otherwise. 
+.RE
+.PP
+
+.SS "int application_load (enum \fBAPPLICATION_ID\fP appid)"Loads the application identified by \fIappid\fP to the RAM.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIappid\fP The identificator for the application to load.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 if the application was loaded correctly, an error code if the application failed to load. 
+.RE
+.PP
+
+.SS "int application_remove (enum \fBAPPLICATION_ID\fP appid)"Removes the application currently located at the slot \fIappid\fP from the system.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIappid\fP The slot in the persistent storage to free up.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 if the operation completed successfully, an error code otherwise. 
+.RE
+.PP
+
+.SS "int application_rename (enum \fBAPPLICATION_ID\fP appid, const char * name)"Renames the application currently located at the slot \fIappid\fP, giving it the name \fIname\fP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIappid\fP The slot in the persistent storage where the application to rename is located. 
+.br
+\fIname\fP The new name to assign to this application. 
+.RE
+.PP
+
+.SS "int application_run ()"Runs the application currently stored in the RAM.
+.PP
+\fBTodo\fP
+.RS 4
+Will this method ever return if the application starts correctly?
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An error code indicating the reason of the failure. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BNG Bootloader from the source code.

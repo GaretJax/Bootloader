@@ -1,0 +1,87 @@
+\section{commands/dispatcher.h File Reference}
+\label{da/d73/dispatcher_8h}\index{commands/dispatcher.h@{commands/dispatcher.h}}
+{\ttfamily \#include \char`\"{}registry.h\char`\"{}}\par
+Include dependency graph for dispatcher.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=99pt]{d4/d88/dispatcher_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=99pt]{db/dda/dispatcher_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf MAX\_\-ARGC}~100
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf command\_\-parse} (const char $\ast$cmd, char $\ast$args[$\,$])
+\item 
+int {\bf command\_\-dispatch} (int argc, char $\ast$argv[$\,$])
+\item 
+int {\bf command\_\-parse\_\-and\_\-dispatch} (const char $\ast$cmd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This files contains various utilities which operate on the commands registry to parse a shell like command string and to call the command with the retrieved arguments. 
+
+Definition in file {\bf dispatcher.h}.
+
+
+
+\subsection{Define Documentation}
+\index{dispatcher.h@{dispatcher.h}!MAX\_\-ARGC@{MAX\_\-ARGC}}
+\index{MAX\_\-ARGC@{MAX\_\-ARGC}!dispatcher.h@{dispatcher.h}}
+\subsubsection[{MAX\_\-ARGC}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-ARGC~100}\label{da/d73/dispatcher_8h_ae1da50c0d24fa0390a6c287d6cb4befe}
+The maximum number of tokens which an array should be able to contain. 
+
+Definition at line 17 of file dispatcher.h.
+
+
+
+\subsection{Function Documentation}
+\index{dispatcher.h@{dispatcher.h}!command\_\-dispatch@{command\_\-dispatch}}
+\index{command\_\-dispatch@{command\_\-dispatch}!dispatcher.h@{dispatcher.h}}
+\subsubsection[{command\_\-dispatch}]{\setlength{\rightskip}{0pt plus 5cm}int command\_\-dispatch (int {\em argc}, \/  char $\ast$ {\em argv}[$\,$])}\label{da/d73/dispatcher_8h_a8da2ffb2b8e7d61768302a02ed1ec372}
+Takes a list of tokens and its count and executes the registered command. This function takes the first ite in {\itshape argv\/} and retrieves the command from the registry using this string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em argc}]The number of tokens contained in {\itshape argv\/}. \item[\mbox{$\leftarrow$} {\em argv}]The tokens as returned by the {\ttfamily command\_\-parse} function.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status code of the executed command (either 0 or a positive error code if the command execution failed) or a negative error code if it was not possible to call the command. 
+\end{DoxyReturn}
+\index{dispatcher.h@{dispatcher.h}!command\_\-parse@{command\_\-parse}}
+\index{command\_\-parse@{command\_\-parse}!dispatcher.h@{dispatcher.h}}
+\subsubsection[{command\_\-parse}]{\setlength{\rightskip}{0pt plus 5cm}int command\_\-parse (const char $\ast$ {\em cmd}, \/  char $\ast$ {\em args}[$\,$])}\label{da/d73/dispatcher_8h_afa457934f41f4c76df63346cccdf5af5}
+Parses a command string and populates an array with the obtained tokens.
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape args\/} is an array of size {\ttfamily MAX\_\-ARGC} 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cmd}]The string containing the command to parse. \item[\mbox{$\rightarrow$} {\em args}]The array which will be populated with the tokens obtained by parsing the {\itshape cmd\/} argument.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of found tokens (the count of items in {\itshape args\/}) or a negative error code if the function fails. 
+\end{DoxyReturn}
+\index{dispatcher.h@{dispatcher.h}!command\_\-parse\_\-and\_\-dispatch@{command\_\-parse\_\-and\_\-dispatch}}
+\index{command\_\-parse\_\-and\_\-dispatch@{command\_\-parse\_\-and\_\-dispatch}!dispatcher.h@{dispatcher.h}}
+\subsubsection[{command\_\-parse\_\-and\_\-dispatch}]{\setlength{\rightskip}{0pt plus 5cm}int command\_\-parse\_\-and\_\-dispatch (const char $\ast$ {\em cmd})}\label{da/d73/dispatcher_8h_a8933a97708ae70540856cb1e055579d2}
+Shortcut function to directly parse and dispatch a command in one step. This function calls {\ttfamily command\_\-parse} and passes its results to {\ttfamily command\_\-dispatch} 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cmd}]The string containing the command to parse.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value returned by the {\ttfamily command\_\-dispatch} function call. 
+\end{DoxyReturn}

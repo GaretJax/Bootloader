@@ -22,7 +22,7 @@
     <script type="text/javascript" src="../static/translations.js"></script>
     <link rel="top" title="BNG Bootloader v0 documentation" href="../index.html" />
     <link rel="next" title="Spezifikation" href="../specification/index.html" />
-    <link rel="prev" title="Welcome to BNG Bootloader’s documentation!" href="../index.html" /> 
+    <link rel="prev" title="Abstract" href="../abstract.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,7 +35,7 @@
           <a href="../specification/index.html" title="Spezifikation"
              accesskey="N">weiter</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="Welcome to BNG Bootloader’s documentation!"
+          <a href="../abstract.html" title="Abstract"
              accesskey="P">zurück</a> |</li>
         <li><a href="../index.html">BNG Bootloader v0 documentation</a> &raquo;</li> 
       </ul>
@@ -51,26 +51,29 @@
 <div class="section" id="uberblick">
 <h2>Überblick<a class="headerlink" href="#uberblick" title="Permalink zu dieser Überschrift">¶</a></h2>
 <img alt="../images/overview.png" src="../images/overview.png" />
+<p>In der obenstehenden Gesammtübersicht sind die einzelnen Komponenten und deren Verknüpfung dargestellt.
+Im folgenden Kapitel wird die Architektur der jeweiligen Komponenten näher
+beschrieben.</p>
 </div>
-<div class="section" id="application-manager">
-<h2>Application Manager<a class="headerlink" href="#application-manager" title="Permalink zu dieser Überschrift">¶</a></h2>
+<div class="section" id="application-driver">
+<h2>Application Driver<a class="headerlink" href="#application-driver" title="Permalink zu dieser Überschrift">¶</a></h2>
 <img alt="../images/app-manager.png" src="../images/app-manager.png" />
-<p>Die Aufgabe der Application Manager ist es, den Applikations-verzeichnis zu
+<p>Die Aufgabe der Application Driver ist es, das Applikationsverzeichnis zu
 verwalten und den aktuellen Ihnalt des Flashspeichers in den Arbeitsspeicher zu laden.</p>
 <div class="section" id="flash-access-api">
 <h3>Flash Access API<a class="headerlink" href="#flash-access-api" title="Permalink zu dieser Überschrift">¶</a></h3>
 <p>Mit der Flash Access API können entweder Flashspeicher, Arbeitsspeicher oder
-Festplatte benutzt werden. Die drei Hauptfunktionen der API werden lesen,
-schreiben und löschen sein.
+Festplatte benutzt werden. Die drei Hauptfunktionen der API sind lesen,
+schreiben und löschen.
 Der Zugriff auf den Flashspeicher ist nur mittels Mikrokontroller MC68332 möglich (Zielplattform).
 Lesen und/oder Schreiben auf Arbeitsspeicher oder Festplatte sind für Testzwecke gedacht (Debugging).</p>
 </div>
 <div class="section" id="application-register-wrapper">
 <h3>Application Register Wrapper<a class="headerlink" href="#application-register-wrapper" title="Permalink zu dieser Überschrift">¶</a></h3>
-<p>Damit wir nicht direkt mit der Flash API gearbeitet werden muss, übernimmt der
+<p>Damit nicht direkt mit der Flash API gearbeitet werden muss, übernimmt der
 Application Register Wrapper die Ansteuerung der Flash Access API. Dies
 erleichtert das Entwickeln des Bootloaders und ermöglicht den Code des
-Application Manager übersichtlich zu gestalten.</p>
+Application Driver übersichtlich zu gestalten.</p>
 </div>
 </div>
 <div class="section" id="serial-interface-driver">
@@ -100,7 +103,7 @@ und delegiert das Aufrufen der entsprechenden Methoden (siehe Commands).</p>
             <ul>
 <li><a class="reference external" href="#">Architektur</a><ul>
 <li><a class="reference external" href="#uberblick">Überblick</a></li>
-<li><a class="reference external" href="#application-manager">Application Manager</a><ul>
+<li><a class="reference external" href="#application-driver">Application Driver</a><ul>
 <li><a class="reference external" href="#flash-access-api">Flash Access API</a></li>
 <li><a class="reference external" href="#application-register-wrapper">Application Register Wrapper</a></li>
 </ul>
@@ -112,8 +115,8 @@ und delegiert das Aufrufen der entsprechenden Methoden (siehe Commands).</p>
 </ul>
 
             <h4>Vorheriges Thema</h4>
-            <p class="topless"><a href="../index.html"
-                                  title="vorheriges Kapitel">Welcome to BNG Bootloader&#8217;s documentation!</a></p>
+            <p class="topless"><a href="../abstract.html"
+                                  title="vorheriges Kapitel">Abstract</a></p>
             <h4>Nächstes Thema</h4>
             <p class="topless"><a href="../specification/index.html"
                                   title="nächstes Kapitel">Spezifikation</a></p>
@@ -149,7 +152,7 @@ und delegiert das Aufrufen der entsprechenden Methoden (siehe Commands).</p>
           <a href="../specification/index.html" title="Spezifikation"
              >weiter</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="Welcome to BNG Bootloader’s documentation!"
+          <a href="../abstract.html" title="Abstract"
              >zurück</a> |</li>
         <li><a href="../index.html">BNG Bootloader v0 documentation</a> &raquo;</li> 
       </ul>

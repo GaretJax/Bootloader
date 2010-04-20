@@ -1,0 +1,88 @@
+\section{configuration/registry.h File Reference}
+\label{d4/d64/configuration_2registry_8h}\index{configuration/registry.h@{configuration/registry.h}}
+{\ttfamily \#include \char`\"{}../storage/persistent.h\char`\"{}}\par
+Include dependency graph for registry.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=88pt]{d7/d1e/configuration_2registry_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=88pt]{d3/dbb/configuration_2registry_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf CONFIG\_\-KEY} \{ {\bf DUMMY\_\-CONFIG\_\-KEY}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf config\_\-get} (enum {\bf CONFIG\_\-KEY} key, void $\ast$buffer)
+\item 
+int {\bf config\_\-set} (enum {\bf CONFIG\_\-KEY} key, const void $\ast$buffer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module allows to store to and retrieve configuration values from a persistent storage device. It uses the \doxyref{storage/persistent.h}{p.}{de/de8/persistent_8h} interface for all read/write operations.
+
+\begin{Desc}
+\item[{\bf Todo}]Define the values in the {\ttfamily CONFIG\_\-KEY} enum. 
+
+Should we make this interface more generic and not define the config keys using enum values? This woul allow for non hard coded keys but we loose compile-\/time error checking. If we change the interface in the described way, there will be the need for a {\ttfamily config\_\-clear} function. 
+
+The two get/set functions are very generic and involve a relatively large amount of code to be used, wouldn't it be better to define the different types of the configuration directives (mainly strings and ints) and to offer type-\/specific getters and setters (i.e. {\ttfamily config\_\-get\_\-int})? \end{Desc}
+
+
+Definition in file {\bf registry.h}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{configuration/registry.h@{configuration/registry.h}!CONFIG\_\-KEY@{CONFIG\_\-KEY}}
+\index{CONFIG\_\-KEY@{CONFIG\_\-KEY}!configuration/registry.h@{configuration/registry.h}}
+\subsubsection[{CONFIG\_\-KEY}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CONFIG\_\-KEY}}\label{d4/d64/configuration_2registry_8h_a9f6564c7929a2476606841e63eaf819a}
+Defines the different available configuration directives. This keys can be used to get or set configuration values with the {\ttfamily config\_\-get} and {\ttfamily config\_\-set} functions. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{DUMMY\_\-CONFIG\_\-KEY@{DUMMY\_\-CONFIG\_\-KEY}!configuration/registry.h@{configuration/registry.h}}\index{configuration/registry.h@{configuration/registry.h}!DUMMY\_\-CONFIG\_\-KEY@{DUMMY\_\-CONFIG\_\-KEY}}\item[{\em 
+DUMMY\_\-CONFIG\_\-KEY\label{d4/d64/configuration_2registry_8h_a9f6564c7929a2476606841e63eaf819aa08a60b06193f03c91c0eba1e9d969ea2}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 31 of file registry.h.
+
+
+
+\subsection{Function Documentation}
+\index{configuration/registry.h@{configuration/registry.h}!config\_\-get@{config\_\-get}}
+\index{config\_\-get@{config\_\-get}!configuration/registry.h@{configuration/registry.h}}
+\subsubsection[{config\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}int config\_\-get (enum {\bf CONFIG\_\-KEY} {\em key}, \/  void $\ast$ {\em buffer})}\label{d4/d64/configuration_2registry_8h_a3e29d09d33932e8c7e30aadc34e6cdcd}
+Reads the value identified by {\itshape key\/} argument from the config registry and writes it to the memory area pointed to by {\itshape buffer\/}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em key}]The key of the configuration directive to read. \item[\mbox{$\rightarrow$} {\em buffer}]The pointer to the memory area to which the value has to be written.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the value was read correctly, a negative error code otherwise. 
+\end{DoxyReturn}
+\index{configuration/registry.h@{configuration/registry.h}!config\_\-set@{config\_\-set}}
+\index{config\_\-set@{config\_\-set}!configuration/registry.h@{configuration/registry.h}}
+\subsubsection[{config\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}int config\_\-set (enum {\bf CONFIG\_\-KEY} {\em key}, \/  const void $\ast$ {\em buffer})}\label{d4/d64/configuration_2registry_8h_a4205c10441d7eb05544bcd6e1d9ad86a}
+Sets the value identified by {\itshape key\/} to the content of {\itshape buffer\/}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em key}]The key of the configuration directive to read. \item[\mbox{$\leftarrow$} {\em buffer}]The pointer to the memory area from which the value has to be read.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the value was set correctly, a negative error code otherwise. 
+\end{DoxyReturn}

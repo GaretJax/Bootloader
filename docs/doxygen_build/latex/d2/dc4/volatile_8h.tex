@@ -1,0 +1,54 @@
+\section{storage/volatile.h File Reference}
+\label{d2/dc4/volatile_8h}\index{storage/volatile.h@{storage/volatile.h}}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=74pt]{de/d35/volatile_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf vstorage\_\-read} (char $\ast$buffer, void $\ast$address, int length)
+\item 
+int {\bf vstorage\_\-write} (const char $\ast$buffer, void $\ast$address, int length)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface to read/write operations on a volatile storage devices or interfaces.
+
+The prototypes contained in this file can be implemented multiple times to be adapted to different storage devices such as RAMs, Cache chips or Hard Disk Drives (i.e. for development/testing purposes). 
+
+Definition in file {\bf volatile.h}.
+
+
+
+\subsection{Function Documentation}
+\index{volatile.h@{volatile.h}!vstorage\_\-read@{vstorage\_\-read}}
+\index{vstorage\_\-read@{vstorage\_\-read}!volatile.h@{volatile.h}}
+\subsubsection[{vstorage\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}int vstorage\_\-read (char $\ast$ {\em buffer}, \/  void $\ast$ {\em address}, \/  int {\em length})}\label{d2/dc4/volatile_8h_a0a12c5736c6deb1289081f8c102ca28e}
+Reads some data from the volatile storage handler compiled with this function.
+
+\begin{Desc}
+\item[{\bf Todo}]Define the possible error numbers and their respective meaning.\end{Desc}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em buffer}]The pointer to a char buffer where the read data has to be written. \item[\mbox{$\leftarrow$} {\em address}]The address from which to start to read from the storage device. \item[\mbox{$\leftarrow$} {\em length}]The number of bytes to read from the storage device, starting at the given address.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read, a negative number if an error occurred. 
+\end{DoxyReturn}
+\index{volatile.h@{volatile.h}!vstorage\_\-write@{vstorage\_\-write}}
+\index{vstorage\_\-write@{vstorage\_\-write}!volatile.h@{volatile.h}}
+\subsubsection[{vstorage\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}int vstorage\_\-write (const char $\ast$ {\em buffer}, \/  void $\ast$ {\em address}, \/  int {\em length})}\label{d2/dc4/volatile_8h_acdf6b24f662a99d642769d4c12473dc8}
+Writes some data to the volatile storage handler compiled with this function.
+
+\begin{Desc}
+\item[{\bf Todo}]Define the possible error numbers and their respective meaning.\end{Desc}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em buffer}]The pointer to a char buffer from where the data to write has to be read. \item[\mbox{$\leftarrow$} {\em address}]The address from which to start to write to the storage device. \item[\mbox{$\leftarrow$} {\em length}]The number of bytes to write to the storage device, starting at the given address.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written, a negative number if an error occurred. 
+\end{DoxyReturn}

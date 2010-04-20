@@ -1,0 +1,123 @@
+\section{application/manager.h File Reference}
+\label{db/d45/manager_8h}\index{application/manager.h@{application/manager.h}}
+{\ttfamily \#include \char`\"{}../storage/persistent.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../storage/persistent.h\char`\"{}}\par
+Include dependency graph for manager.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=94pt]{de/ddd/manager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=94pt]{d4/d7e/manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf APPLICATION\_\-ID} \{ {\bf APP\_\-0}, 
+{\bf APP\_\-1}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf application\_\-load} (enum {\bf APPLICATION\_\-ID} appid)
+\item 
+int {\bf application\_\-run} ()
+\item 
+int {\bf application\_\-add} (enum {\bf APPLICATION\_\-ID} appid, const char $\ast$name, const char $\ast$buffer)
+\item 
+int {\bf application\_\-remove} (enum {\bf APPLICATION\_\-ID} appid)
+\item 
+int {\bf application\_\-rename} (enum {\bf APPLICATION\_\-ID} appid, const char $\ast$name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Application management utilitites. This functions allow to run, add and manage existing applications.
+
+\begin{Desc}
+\item[{\bf Todo}]How can we read the name of a given application? Should we provide a function here or do we read the value directly from the configuration registry? \end{Desc}
+
+
+Definition in file {\bf manager.h}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{manager.h@{manager.h}!APPLICATION\_\-ID@{APPLICATION\_\-ID}}
+\index{APPLICATION\_\-ID@{APPLICATION\_\-ID}!manager.h@{manager.h}}
+\subsubsection[{APPLICATION\_\-ID}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf APPLICATION\_\-ID}}\label{db/d45/manager_8h_aca7b349f156f649a8425db1bc765e070}
+The different IDs given to the application which can possibly be hosted on the target system. The number of values in the enumeration gives the maximum number of application which can coexist on the target. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{APP\_\-0@{APP\_\-0}!manager.h@{manager.h}}\index{manager.h@{manager.h}!APP\_\-0@{APP\_\-0}}\item[{\em 
+APP\_\-0\label{db/d45/manager_8h_aca7b349f156f649a8425db1bc765e070a302167127e6e15d34c39ae2c56847bc3}
+}]\index{APP\_\-1@{APP\_\-1}!manager.h@{manager.h}}\index{manager.h@{manager.h}!APP\_\-1@{APP\_\-1}}\item[{\em 
+APP\_\-1\label{db/d45/manager_8h_aca7b349f156f649a8425db1bc765e070ae424423dc4421c9aa78ea7062c16b24b}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 25 of file manager.h.
+
+
+
+\subsection{Function Documentation}
+\index{manager.h@{manager.h}!application\_\-add@{application\_\-add}}
+\index{application\_\-add@{application\_\-add}!manager.h@{manager.h}}
+\subsubsection[{application\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}int application\_\-add (enum {\bf APPLICATION\_\-ID} {\em appid}, \/  const char $\ast$ {\em name}, \/  const char $\ast$ {\em buffer})}\label{db/d45/manager_8h_a9e1962ad861e2a1e1d6f6d10bd8174ee}
+Adds the application at {\itshape buffer\/} to the slot identified by {\itshape appid\/}, giving it the name {\itshape name\/}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em appid}]The slot to which write the application to the persistent storage. \item[\mbox{$\leftarrow$} {\em name}]The human readable name to give to this application. \item[\mbox{$\leftarrow$} {\em buffer}]The buffer from which to read the application to be written.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully, an error code otherwise. 
+\end{DoxyReturn}
+\index{manager.h@{manager.h}!application\_\-load@{application\_\-load}}
+\index{application\_\-load@{application\_\-load}!manager.h@{manager.h}}
+\subsubsection[{application\_\-load}]{\setlength{\rightskip}{0pt plus 5cm}int application\_\-load (enum {\bf APPLICATION\_\-ID} {\em appid})}\label{db/d45/manager_8h_abf567e8834d26f94b9d0440e21114be1}
+Loads the application identified by {\itshape appid\/} to the RAM.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em appid}]The identificator for the application to load.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the application was loaded correctly, an error code if the application failed to load. 
+\end{DoxyReturn}
+\index{manager.h@{manager.h}!application\_\-remove@{application\_\-remove}}
+\index{application\_\-remove@{application\_\-remove}!manager.h@{manager.h}}
+\subsubsection[{application\_\-remove}]{\setlength{\rightskip}{0pt plus 5cm}int application\_\-remove (enum {\bf APPLICATION\_\-ID} {\em appid})}\label{db/d45/manager_8h_a2b5d68b3e2ea266b131e3e3c9802d6f2}
+Removes the application currently located at the slot {\itshape appid\/} from the system.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em appid}]The slot in the persistent storage to free up.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully, an error code otherwise. 
+\end{DoxyReturn}
+\index{manager.h@{manager.h}!application\_\-rename@{application\_\-rename}}
+\index{application\_\-rename@{application\_\-rename}!manager.h@{manager.h}}
+\subsubsection[{application\_\-rename}]{\setlength{\rightskip}{0pt plus 5cm}int application\_\-rename (enum {\bf APPLICATION\_\-ID} {\em appid}, \/  const char $\ast$ {\em name})}\label{db/d45/manager_8h_ad90e25f8acafe8f6f861849aa89f56a2}
+Renames the application currently located at the slot {\itshape appid\/}, giving it the name {\itshape name\/}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em appid}]The slot in the persistent storage where the application to rename is located. \item[\mbox{$\leftarrow$} {\em name}]The new name to assign to this application. \end{DoxyParams}
+\index{manager.h@{manager.h}!application\_\-run@{application\_\-run}}
+\index{application\_\-run@{application\_\-run}!manager.h@{manager.h}}
+\subsubsection[{application\_\-run}]{\setlength{\rightskip}{0pt plus 5cm}int application\_\-run ()}\label{db/d45/manager_8h_afa031199ed298d4b9c5326db517d1c12}
+Runs the application currently stored in the RAM.
+
+\begin{Desc}
+\item[{\bf Todo}]Will this method ever return if the application starts correctly?\end{Desc}
+\begin{DoxyReturn}{Returns}
+An error code indicating the reason of the failure. 
+\end{DoxyReturn}

@@ -1,0 +1,75 @@
+.TH "todo" 3 "20 Apr 2010" "Version 0.2" "BNG Bootloader" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+todo \- Todo List 
+ 
+.IP "\fBpage \fBAPI Specification\fP \fP" 1c
+Move this documentation to another file or to the Sphinx documentation.
+.PP
+.PP
+.PP
+ 
+.IP "\fBGlobal \fBapplication_run\fP() \fP" 1c
+Will this method ever return if the application starts correctly?
+.PP
+.PP
+.PP
+ 
+.IP "\fBFile \fBmanager.h\fP \fP" 1c
+How can we read the name of a given application? Should we provide a function here or do we read the value directly from the configuration registry? 
+.PP
+.PP
+ 
+.IP "\fBGlobal \fBpstorage_erase\fP(void *address, int length) \fP" 1c
+Define the possible error numbers and their respective meaning.
+.PP
+.PP
+.PP
+ 
+.IP "\fBGlobal \fBpstorage_read\fP(char *buffer, void *address, int length) \fP" 1c
+Define the possible error numbers and their respective meaning.
+.PP
+.PP
+.PP
+ 
+.IP "\fBGlobal \fBpstorage_write\fP(const char *buffer, void *address, int length) \fP" 1c
+Define the possible error numbers and their respective meaning.
+.PP
+.PP
+.PP
+ 
+.IP "\fBFile \fBregistry.h\fP \fP" 1c
+Define the values in the \fCCONFIG_KEY\fP enum. 
+.PP
+Should we make this interface more generic and not define the config keys using enum values? This woul allow for non hard coded keys but we loose compile-time error checking. If we change the interface in the described way, there will be the need for a \fCconfig_clear\fP function. 
+.PP
+The two get/set functions are very generic and involve a relatively large amount of code to be used, wouldn't it be better to define the different types of the configuration directives (mainly strings and ints) and to offer type-specific getters and setters (i.e. \fCconfig_get_int\fP)? 
+.PP
+.PP
+ 
+.IP "\fBGlobal \fBserial_readchar\fP() \fP" 1c
+How can we handle errors of this function? Setting a timeout limit and a special return code could do the trick.
+.PP
+.PP
+.PP
+ 
+.IP "\fBGlobal \fBserial_readline\fP(char *buffer) \fP" 1c
+Should we set a timeout option? Should we allow to configure the char sequence to identify a line break (\\n, \\r\\n or \\r)? 
+.PP
+Define the possible error numbers and their respective meaning.
+.PP
+.PP
+.PP
+ 
+.IP "\fBGlobal \fBvstorage_read\fP(char *buffer, void *address, int length) \fP" 1c
+Define the possible error numbers and their respective meaning.
+.PP
+.PP
+.PP
+ 
+.IP "\fBGlobal \fBvstorage_write\fP(const char *buffer, void *address, int length) \fP" 1c
+Define the possible error numbers and their respective meaning.
+.PP
+.PP
+

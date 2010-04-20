@@ -20,16 +20,16 @@ Befehle
 
 ``download [-b app-name [-d]]``
 
-  Lädt die folgenden Daten in den Arbeitsspeicher als eine SRecord datei.
+  Lädt die folgenden Daten in den Arbeitsspeicher als eine SRecord Datei.
   
-  -b app-name            Führt den Befehl ``burn app-name`` aus.
+  -b app-id            Führt den Befehl ``burn app-id`` aus.
   -d                     Setzt die Applikation als default Startanwendung 
 
 ---------------
 
 ``burn app-name [-d]``
 
-  Speichert das sich im Arbeitsspeicher befindende SRecordFile in den Flashspeicher unter den namen ``app-name``.
+  Speichert das sich im Arbeitsspeicher befindende SRecordFile in den Flashspeicher unter dem Namen ``app-name``.
   
   -d                     Setzt die zu brennende Applikation als default Startanwendung
 
@@ -51,17 +51,24 @@ Befehle
 
 ``set [--default=app-id] [--timeout=seconds] [...]``
 
-  Setzt die Werte der gegebenen Konfiguration-optionen.
+  Setzt die Werte der gegebenen Konfigurationsoptionen.
   
   -d app-id              Siehe ``--default-app``
   --default=app-id       Setzt die default Applikation
   -t seconds             Siehe ``--default-app``
   --timeout=seconds      Setzt die Wartezeit nach der die default Applikation gestartet werden soll
   -e num                 Siehe ``--default-app``
-  --errcount=num         Anzahl Neustarts im Falle eines fehlerhafen Starts einer Applikation.  Sobald errorcount erreicht ist, wird das Timeout deaktiviert und den Bootloader wird in Terminal-Mode umschalten.
+  --errcount=num         Anzahl Neustarts im Falle eines fehlerhafen Starts einer Applikation.
+                         Sobald errorcount erreicht ist, wird das Timeout deaktiviert und den Bootloader wird in Terminal-Mode umschalten.
 
 ---------------
 
-``remove app-id``
+``bootconfig``
+
+  Führt die aktuelle Konfiguration (app-name, timeout, errorcount) des Bootloaders auf.
+
+---------------
+
+``erase app-id``
 
   Entfernt die mit dem ``app-id`` identifizierte Applikation aus der Applikationsliste des Flashspeichers.

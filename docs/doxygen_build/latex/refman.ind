@@ -1,0 +1,128 @@
+\begin{theindex}
+
+  \item {APP\_\-0}
+    \subitem {manager.h}, 8
+  \item {APP\_\-1}
+    \subitem {manager.h}, 8
+  \item {application/manager.h}, 7
+  \item {application\_\-add}
+    \subitem {manager.h}, 8
+  \item {APPLICATION\_\-ID}
+    \subitem {manager.h}, 8
+  \item {application\_\-load}
+    \subitem {manager.h}, 8
+  \item {application\_\-remove}
+    \subitem {manager.h}, 8
+  \item {application\_\-rename}
+    \subitem {manager.h}, 9
+  \item {application\_\-run}
+    \subitem {manager.h}, 9
+
+  \indexspace
+
+  \item {Command}
+    \subitem {commands/registry.h}, 12
+  \item {command\_\-dispatch}
+    \subitem {dispatcher.h}, 10
+  \item {command\_\-parse}
+    \subitem {dispatcher.h}, 11
+  \item {command\_\-parse\_\-and\_\-dispatch}
+    \subitem {dispatcher.h}, 11
+  \item {command\_\-registry\_\-get}
+    \subitem {commands/registry.h}, 12
+  \item {command\_\-registry\_\-register}
+    \subitem {commands/registry.h}, 13
+  \item {command\_\-registry\_\-unregister}
+    \subitem {commands/registry.h}, 13
+  \item {commands/dispatcher.h}, 10
+  \item {commands/registry.h}, 12
+    \subitem {Command}, 12
+    \subitem {command\_\-registry\_\-get}, 12
+    \subitem {command\_\-registry\_\-register}, 13
+    \subitem {command\_\-registry\_\-unregister}, 13
+  \item {config\_\-get}
+    \subitem {configuration/registry.h}, 15
+  \item {CONFIG\_\-KEY}
+    \subitem {configuration/registry.h}, 15
+  \item {config\_\-set}
+    \subitem {configuration/registry.h}, 15
+  \item {configuration/registry.h}, 14
+    \subitem {config\_\-get}, 15
+    \subitem {CONFIG\_\-KEY}, 15
+    \subitem {config\_\-set}, 15
+    \subitem {DUMMY\_\-CONFIG\_\-KEY}, 15
+
+  \indexspace
+
+  \item {dispatcher.h}
+    \subitem {command\_\-dispatch}, 10
+    \subitem {command\_\-parse}, 11
+    \subitem {command\_\-parse\_\-and\_\-dispatch}, 11
+    \subitem {MAX\_\-ARGC}, 10
+  \item {DUMMY\_\-CONFIG\_\-KEY}
+    \subitem {configuration/registry.h}, 15
+
+  \indexspace
+
+  \item {io/serial.h}, 16
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.c}, 18
+  \item {main.c}, 18
+    \subitem {main}, 18
+  \item {manager.h}
+    \subitem {APP\_\-0}, 8
+    \subitem {APP\_\-1}, 8
+    \subitem {application\_\-add}, 8
+    \subitem {APPLICATION\_\-ID}, 8
+    \subitem {application\_\-load}, 8
+    \subitem {application\_\-remove}, 8
+    \subitem {application\_\-rename}, 9
+    \subitem {application\_\-run}, 9
+  \item {MAX\_\-ARGC}
+    \subitem {dispatcher.h}, 10
+
+  \indexspace
+
+  \item {persistent.h}
+    \subitem {pstorage\_\-erase}, 19
+    \subitem {pstorage\_\-read}, 19
+    \subitem {pstorage\_\-write}, 20
+  \item {pstorage\_\-erase}
+    \subitem {persistent.h}, 19
+  \item {pstorage\_\-read}
+    \subitem {persistent.h}, 19
+  \item {pstorage\_\-write}
+    \subitem {persistent.h}, 20
+
+  \indexspace
+
+  \item {serial.h}
+    \subitem {serial\_\-init}, 16
+    \subitem {serial\_\-readchar}, 16
+    \subitem {serial\_\-readline}, 16
+    \subitem {serial\_\-write}, 17
+  \item {serial\_\-init}
+    \subitem {serial.h}, 16
+  \item {serial\_\-readchar}
+    \subitem {serial.h}, 16
+  \item {serial\_\-readline}
+    \subitem {serial.h}, 16
+  \item {serial\_\-write}
+    \subitem {serial.h}, 17
+  \item {storage/persistent.h}, 19
+  \item {storage/volatile.h}, 21
+
+  \indexspace
+
+  \item {volatile.h}
+    \subitem {vstorage\_\-read}, 21
+    \subitem {vstorage\_\-write}, 21
+  \item {vstorage\_\-read}
+    \subitem {volatile.h}, 21
+  \item {vstorage\_\-write}
+    \subitem {volatile.h}, 21
+
+\end{theindex}
