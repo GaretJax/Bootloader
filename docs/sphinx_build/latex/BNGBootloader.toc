@@ -1,0 +1,24 @@
+\select@language {ngerman}
+\contentsline {chapter}{\numberline {1}Abstract}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Architektur}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}\IeC {\"U}berblick}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Application Driver}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Flash Access API}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Application Register Wrapper}{4}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Serial Interface Driver}{4}{section.2.3}
+\contentsline {section}{\numberline {2.4}Command Parser}{5}{section.2.4}
+\contentsline {chapter}{\numberline {3}Spezifikation}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Anforderungsspezifikation}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Funktional}{7}{subsection.3.1.1}
+\contentsline {subsubsection}{Muss}{7}{subsubsection*.2}
+\contentsline {subsubsection}{Kann}{7}{subsubsection*.3}
+\contentsline {subsection}{\numberline {3.1.2}Nicht-Funktional}{8}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Befehle}{8}{section.3.2}
+\contentsline {chapter}{\numberline {4}Anlagen}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}Anlage 1: Planung}{11}{section.4.1}
+\contentsline {section}{\numberline {4.2}Anlage 2: Entwicklungs-prozess}{11}{section.4.2}
+\contentsline {section}{\numberline {4.3}Anlage 3: Ressourcen}{12}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Interne ressourcen}{12}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Externe ressourcen}{12}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Anlage 4: Referenzen}{12}{section.4.4}
+\contentsline {section}{\numberline {4.5}Anlage 3: TODOs}{12}{section.4.5}

@@ -5,6 +5,57 @@
       <Name>Root</Name>
       <Path>main.html</Path>
       <Subnodes>
+       <Node>
+        <Name>API Specification</Name>
+        <Path>main.html</Path>
+       </Node>
+       <Node>
+        <Name>Todo List</Name>
+        <Path>dd/da0/todo.html</Path>
+        <Subnodes>
+        </Subnodes>
+       </Node>
+       <Node>
+        <Name>File List</Name>
+        <Path>files.html</Path>
+        <Subnodes>
+         <Node>
+          <Name>main.c</Name>
+          <Path>d0/d29/main_8c.html</Path>
+         </Node>
+         <Node>
+          <Name>application/manager.h</Name>
+          <Path>db/d45/manager_8h.html</Path>
+         </Node>
+         <Node>
+          <Name>commands/dispatcher.h</Name>
+          <Path>da/d73/dispatcher_8h.html</Path>
+         </Node>
+         <Node>
+          <Name>commands/registry.h</Name>
+          <Path>dc/d40/commands_2registry_8h.html</Path>
+         </Node>
+         <Node>
+          <Name>configuration/registry.h</Name>
+          <Path>d4/d64/configuration_2registry_8h.html</Path>
+         </Node>
+         <Node>
+          <Name>io/serial.h</Name>
+          <Path>db/d11/serial_8h.html</Path>
+         </Node>
+         <Node>
+          <Name>storage/persistent.h</Name>
+          <Path>de/de8/persistent_8h.html</Path>
+         </Node>
+         <Node>
+          <Name>storage/volatile.h</Name>
+          <Path>d2/dc4/volatile_8h.html</Path>
+         </Node>
+        </Subnodes>
+       </Node>
+       <Node>
+        <Name>Globals</Name>
+        <Path>globals.html</Path>
        </Node>
       </Subnodes>
     </Node>

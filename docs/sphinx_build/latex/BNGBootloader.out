@@ -1,0 +1,15 @@
+\BOOKMARK [0][-]{chapter.1}{Abstract}{}
+\BOOKMARK [0][-]{chapter.2}{Architektur}{}
+\BOOKMARK [1][-]{section.2.1}{\334berblick}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{Application Driver}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Serial Interface Driver}{chapter.2}
+\BOOKMARK [1][-]{section.2.4}{Command Parser}{chapter.2}
+\BOOKMARK [0][-]{chapter.3}{Spezifikation}{}
+\BOOKMARK [1][-]{section.3.1}{Anforderungsspezifikation}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{Befehle}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{Anlagen}{}
+\BOOKMARK [1][-]{section.4.1}{Anlage 1: Planung}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Anlage 2: Entwicklungs-prozess}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{Anlage 3: Ressourcen}{chapter.4}
+\BOOKMARK [1][-]{section.4.4}{Anlage 4: Referenzen}{chapter.4}
+\BOOKMARK [1][-]{section.4.5}{Anlage 3: TODOs}{chapter.4}
