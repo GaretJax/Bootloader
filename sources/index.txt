@@ -16,9 +16,9 @@ Welcome to BNG Bootloader's documentation!
    abstract
    architecture/index
    specification/index
+   references
+   resources
    appendices/index
-
-
 
 
 .. Indices and tables
