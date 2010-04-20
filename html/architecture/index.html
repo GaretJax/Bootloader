@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Architektur &mdash; BNG Bootloader v0.2 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="BNG Bootloader v0.2 documentation" href="../index.html" />
+    <link rel="next" title="Spezifikation" href="../specification/index.html" />
+    <link rel="prev" title="Abstract" href="../abstract.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Allgemeiner Index"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="../specification/index.html" title="Spezifikation"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="../abstract.html" title="Abstract"
+             accesskey="P">zurück</a> |</li>
+        <li><a href="../index.html">BNG Bootloader v0.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="architektur">
+<h1>Architektur<a class="headerlink" href="#architektur" title="Permalink zu dieser Überschrift">¶</a></h1>
+<div class="section" id="uberblick">
+<h2>Überblick<a class="headerlink" href="#uberblick" title="Permalink zu dieser Überschrift">¶</a></h2>
+<img alt="../images/overview.png" src="../images/overview.png" />
+<p>In der obenstehenden Gesammtübersicht sind die einzelnen Komponenten und deren Verknüpfung dargestellt.
+Im folgenden Kapitel wird die Architektur der jeweiligen Komponenten näher
+beschrieben.</p>
+</div>
+<div class="section" id="application-driver">
+<h2>Application Driver<a class="headerlink" href="#application-driver" title="Permalink zu dieser Überschrift">¶</a></h2>
+<img alt="../images/app-manager.png" src="../images/app-manager.png" />
+<p>Die Aufgabe der Application Driver ist es, das Applikationsverzeichnis zu
+verwalten und den aktuellen Ihnalt des Flashspeichers in den Arbeitsspeicher zu laden.</p>
+<div class="section" id="flash-access-api">
+<h3>Flash Access API<a class="headerlink" href="#flash-access-api" title="Permalink zu dieser Überschrift">¶</a></h3>
+<p>Mit der Flash Access API können entweder Flashspeicher, Arbeitsspeicher oder
+Festplatte benutzt werden. Die drei Hauptfunktionen der API sind lesen,
+schreiben und löschen.
+Der Zugriff auf den Flashspeicher ist nur mittels Mikrokontroller MC68332 möglich (Zielplattform).
+Lesen und/oder Schreiben auf Arbeitsspeicher oder Festplatte sind für Testzwecke gedacht (Debugging).</p>
+</div>
+<div class="section" id="application-register-wrapper">
+<h3>Application Register Wrapper<a class="headerlink" href="#application-register-wrapper" title="Permalink zu dieser Überschrift">¶</a></h3>
+<p>Damit nicht direkt mit der Flash API gearbeitet werden muss, übernimmt der
+Application Register Wrapper die Ansteuerung der Flash Access API. Dies
+erleichtert das Entwickeln des Bootloaders und ermöglicht den Code des
+Application Driver übersichtlich zu gestalten.</p>
+</div>
+</div>
+<div class="section" id="serial-interface-driver">
+<h2>Serial Interface Driver<a class="headerlink" href="#serial-interface-driver" title="Permalink zu dieser Überschrift">¶</a></h2>
+<img alt="../images/serial-driver.png" src="../images/serial-driver.png" />
+<p>Der Serial Interface Driver ermöglicht die Kommunikation zwischen Zielplattform (MC68332)
+und Benutzer des Bootloader. Mittels eines Keyboards und einem Terminal werden
+Zeichen an den Mikrokontroller geschickt und das Resultat vom Kontroller
+anschliessend wieder an den Benutzer zurück geschickt. Funktionen wie
+put_char oder get_char müssen hier implementiert werden.
+Damit wir die Serielle Schnittstelle in unserer Testumbebung emulieren können werden wir ein Socket benutzen.</p>
+</div>
+<div class="section" id="command-parser">
+<h2>Command Parser<a class="headerlink" href="#command-parser" title="Permalink zu dieser Überschrift">¶</a></h2>
+<p>Der Command Parser analysiert die einkommenden Befehle des Benutzerkeyboards
+und delegiert das Aufrufen der entsprechenden Methoden (siehe Commands).</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../index.html">Inhalt</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Architektur</a><ul>
+<li><a class="reference external" href="#uberblick">Überblick</a></li>
+<li><a class="reference external" href="#application-driver">Application Driver</a><ul>
+<li><a class="reference external" href="#flash-access-api">Flash Access API</a></li>
+<li><a class="reference external" href="#application-register-wrapper">Application Register Wrapper</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#serial-interface-driver">Serial Interface Driver</a></li>
+<li><a class="reference external" href="#command-parser">Command Parser</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Vorheriges Thema</h4>
+            <p class="topless"><a href="../abstract.html"
+                                  title="vorheriges Kapitel">Abstract</a></p>
+            <h4>Nächstes Thema</h4>
+            <p class="topless"><a href="../specification/index.html"
+                                  title="nächstes Kapitel">Spezifikation</a></p>
+            <h3>Diese Seite</h3>
+            <ul class="this-page-menu">
+              <li><a href="../sources/architecture/index.txt"
+                     rel="nofollow">Quelltext anzeigen</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Schnellsuche</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Los" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Allgemeiner Index"
+             >Index</a></li>
+        <li class="right" >
+          <a href="../specification/index.html" title="Spezifikation"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="../abstract.html" title="Abstract"
+             >zurück</a> |</li>
+        <li><a href="../index.html">BNG Bootloader v0.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2010, Elias Medawar, Yves Peissard, Simon Honegger, Jonathan Stoppani.
+      Mit <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.5 erstellt.
+    </div>
+  </body>
+</html>

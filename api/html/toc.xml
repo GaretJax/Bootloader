@@ -1,0 +1,16 @@
+<toc label="BNG Bootloader">
+  <topic label="API Specification" href="main.html"/>
+  <topic label="Todo List" href="dd/da0/todo.html">
+  </topic>
+  <topic label="File List">
+    <topic label="main.c" href="d0/d29/main_8c.html"/>
+    <topic label="application/manager.h" href="db/d45/manager_8h.html"/>
+    <topic label="commands/dispatcher.h" href="da/d73/dispatcher_8h.html"/>
+    <topic label="commands/registry.h" href="dc/d40/commands_2registry_8h.html"/>
+    <topic label="configuration/registry.h" href="d4/d64/configuration_2registry_8h.html"/>
+    <topic label="io/serial.h" href="db/d11/serial_8h.html"/>
+    <topic label="storage/persistent.h" href="de/de8/persistent_8h.html"/>
+    <topic label="storage/volatile.h" href="d2/dc4/volatile_8h.html"/>
+  </topic>
+  <topic label="Globals" href="globals.html"/>
+</toc>
