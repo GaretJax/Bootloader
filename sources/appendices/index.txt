@@ -15,15 +15,13 @@ Ein (Druck-geeignetes) PDF und das originale MS Project Dokument sind auch verf√
 * `Planung MS Project Dokument <../static/planung.mpp>`_
 
 
-Anlage 2: Entwicklungsprozess
------------------------------
+Anlage 2: Entwicklungs-prozess und -ressourcen
+----------------------------------------------
 
-Das ganze Projekt wird auf github (http://github.com) verwaltet und kann unter der adresse http://github.com/garetjax/Bootloader
-eingesehen werden.
+Das ganze Projekt wird auf github (http://github.com) verwaltet.
 
-.. todo::
-   * Dokumentation build script description
-   * Make script for doxygen + sphinx docummentation
+* Git Repository auf github: http://github.com/garetjax/Bootloader
+* Letzer Build der Dokumentation: http://garetjax.github.com/Bootloader/
 
 
 Anlage 3: TODOs
