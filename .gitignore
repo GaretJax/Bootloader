@@ -4,3 +4,5 @@ docs/doxygen_build
 .DS_Store
 docs/sphinx_build/
 docs/doxygen_build/
+source/build
+*.xcodeproj
