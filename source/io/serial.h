@@ -45,6 +45,16 @@ int serial_init(const void * config_struct);
  */
 char serial_readchar();
 
+/**
+ * Returns the number of total characters actually available in the serial input
+ * buffer. Returns 0 if no unread data was yet received.
+ *
+ * The value is calculated by computing the difference between the lower and
+ * upper buffer limit flag.
+ *
+ * @return  The number of characters available in the buffer.
+ */
+int serial_buffered_chars_count();
 
 /**
  * Reads data from the communication device until a newline character is
