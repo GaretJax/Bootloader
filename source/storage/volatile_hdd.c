@@ -1,5 +1,6 @@
 #include <stdio.h> 
-#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "./volatile.h"
 int vstorage_read(char * buffer,const void * address, int length){
     FILE* fichier = fopen("./hdd.ram", "rb+");
@@ -44,12 +45,12 @@ int count() {
 int main(){
 
     void * add = (void *)0x000A;
-    char te[] = "Valeur en mémoire à l'adresse 10\\0";
-    vstorage_write(&te,add,36);
+    char te[] = "Valeur en mémoire à l'adresse 1";
+    vstorage_write(te,add,strlen(te)+1);
     add = (void *)0x002A;
-    char te2[] = "Valeur à l'adresse 42\0";
+    char te2[] = "Valeur à l'adresse 42";
     add = (void *)0x000A;
-    vstorage_read(&te2,add,34);
+    vstorage_read(&te2,add,strlen(te2)+1);
     printf("Read %s",te2);
     return 0;
 }
