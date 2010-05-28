@@ -1,14 +1,14 @@
-#include <dispatcher.h>
-#include <registry.h>
+#include "dispatcher.h"
+#include "registry.h"
 
 int command_parse(const char * cmd, char * args[]) {
     char * cmdCopy = strdup(cmd);    // Duplicates the cmd string because strtok is gonna modify it
     int i = 0;
     char * delim = " ";
     args[i] = strtok(cmdCopy, delim);    // Copy the first token of string into args[0]
-    while (args[i] != NULL) {
+    while (args[i] != 0) {
         i++;
-        args[i] = strtok(NULL, delim);
+        args[i] = strtok(0, delim);
     }
     if (i == 0) {    // if we didnt find any tokens
         return -1;
@@ -34,3 +34,4 @@ int command_parse_and_dispatch(const char * cmd) {
     int dispatchError = command_dispatch(tokens, args);
     return dispatchError;
 }
+
