@@ -46,6 +46,15 @@ int serial_init(const void * config_struct);
 char serial_readchar();
 
 /**
+ * Writes a single char to a serial interface, blocking until some the send
+ * buffer is ready.
+ *
+ * @pre   The \c serial_init function was already called and returned
+ *        sucessfully.
+ */
+void serial_writechar(const char c);
+
+/**
  * Returns the number of total characters actually available in the serial input
  * buffer. Returns 0 if no unread data was yet received.
  *
@@ -72,12 +81,14 @@ int serial_buffered_chars_count();
  *
  * @param[out] buffer  The pointer to the string buffer to which the read line
  *                     has to be written.
+ * @param[in]  buf_size  The maximum length of the line (the size of the buffer).
+ *						 If this length is reached before a newline character is
+ *						 encountered, then the function returns too.
  *
  * @return  The number of characters written to the buffer if the operation
  *          completed successfully, a negative error code otherwise.
  */
-int serial_readline(char * buffer);
-
+int serial_readline(char * buffer, const int buf_size);
 
 /**
  * Writes the data contained in the given character buffer to the communication
