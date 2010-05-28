@@ -9,8 +9,8 @@
 
 #include "interrupts.h"
 
-volatile interrupt_handler * VBR = (interrupt_handler *) VBR_ADDRESS;
+volatile InterruptHandler * VBR = (InterruptHandler *) VBR_ADDRESS;
 
-void install_interrupt(interrupt_handler handler, unsigned short index) {
+void install_interrupt(InterruptHandler handler, unsigned short index) {
 	VBR[index] = handler;
 }

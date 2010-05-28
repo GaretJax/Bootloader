@@ -9,6 +9,8 @@
 
 #define SYSTEM_CLOCK 25000000
 
+#define EXTAL_FREQUENCY 32768
+
 #define RAM_SIZE (2 * 128 * 1024)
 #define RAM_BASE_ADDRESS 100000
 

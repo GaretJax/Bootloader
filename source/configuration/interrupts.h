@@ -1,3 +1,5 @@
+#pragma once
+
 /**
  * The base address of the vector table.
  */
@@ -12,11 +14,11 @@
 /**
  * The prototype of an interrupt handler.
  */
-typedef void (*interrupt_handler)();
+typedef void (* InterruptHandler)();
 
 /**
  * Installs the given interrupt to the chosen index.
  *
  * @pre the index paramter must be smaller than VBR_INTERRUPT_COUNT.
  */
-void install_interrupt(interrupt_handler handler, unsigned short index);
+void install_interrupt(InterruptHandler handler, unsigned short index);
