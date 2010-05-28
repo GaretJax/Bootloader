@@ -7,4 +7,3 @@ You can find the documentation for the project at the [project's github page](ht
 
 For the latest documentation for the last commit, clone the git repository and
 build the sources with sphinx.
-
