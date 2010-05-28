@@ -23,7 +23,8 @@ int func4(int argc, const char * argv[]) {
 
 int main(int argc, const char *argv[]) {
 	int numArgs = 4;
-	int errorCount = 0;
+	int errorCountTest1 = 0;
+	int errorCountTest2 = 0;
 
 
 	char* args[numArgs];
@@ -48,13 +49,14 @@ int main(int argc, const char *argv[]) {
 
 	// Test 1 --------------------------------------------------------
 	// Do a get on an empty command registry
+	printf("Test 1\n");
 	char* commandId = funcIds[0];
 	cmd = command_registry_get(funcIds[0]);
 	if (cmd == 0) {
 		printf("Get of empty command list: OK\n");
 	} else {
 		printf("Error: Get of empty command list returned %d, should be 0\n");
-		errorCount++;
+		errorCountTest1++;
 	}
 
 	// Insert one command
@@ -64,7 +66,7 @@ int main(int argc, const char *argv[]) {
 		printf("Insert of %s OK\n", funcIds[0]);
 	} else {
 		printf("Error: Insert of %s failed\n", funcIds[0]);
-		errorCount++;
+		errorCountTest1++;
 	}
 
 	// Get the inserted command
@@ -74,7 +76,7 @@ int main(int argc, const char *argv[]) {
 	} else {
 		printf("Error: Get of %s failed, cmd at %d and func1 at %d\n",
 				funcIds[0], cmd, &func1);
-		errorCount++;
+		errorCountTest1++;
 	}
 
 	// Remove inserted command
@@ -87,17 +89,16 @@ int main(int argc, const char *argv[]) {
 		}
 	} else if (response < 0) {
 		printf("Error: Could not unregister command %s", funcIds[0]);
-		errorCount++;
+		errorCountTest1++;
 	} else if (response > 0) {
 		printf("Error: Command %s could not be found. Can not unregister",
 				funcIds[0]);
-		errorCount++;
+		errorCountTest1++;
 	}
 
-	printf("Test 1 finished with %d errors\n\n", errorCount);
 
 	// Test 2 --------------------------------------------------------
-	errorCount = 0;
+	printf("\n\nTest 2:\n");
 	int i;
 
 	// Add all commands
@@ -107,7 +108,7 @@ int main(int argc, const char *argv[]) {
 			printf("Insert of %s OK\n", funcIds[i]);
 		} else {
 			printf("Error: Insert of %s failed\n", funcIds[i]);
-			errorCount++;
+			errorCountTest2++;
 		}
 	}
 
@@ -119,7 +120,7 @@ int main(int argc, const char *argv[]) {
 		} else {
 			printf("Error: Get of %s failed, cmd at %d and func1 at %d\n",
 					funcIds[i], cmd, funcs[i]);
-			errorCount++;
+			errorCountTest2++;
 		}
 	}
 
@@ -133,14 +134,15 @@ int main(int argc, const char *argv[]) {
 		}
 	} else if (response < 0) {
 		printf("Error: Could not unregister command %s", funcIds[numArgs - 1]);
-		errorCount++;
+		errorCountTest2++;
 	} else if (response > 0) {
 		printf("Error: Command %s could not be found. Can not unregister",
 				funcIds[numArgs - 1]);
-		errorCount++;
+		errorCountTest2++;
 	}
 
-	printf("Test 2 finished with %d errors\n\n", errorCount);
+	printf("\nTest 1 finished with %d errors\n", errorCountTest1);
+	printf("Test 2 finished with %d errors\n", errorCountTest2);
 
 	return 0;
 }
