@@ -1,19 +1,21 @@
 #include <string.h>
+#include "registry.h"
 
 struct CommandItem {
     Command cmd;
-    char* name[MAX_NAME_LENGTH];
+    char* name;
     struct CommandItem* next;
 };
 
-struct CommandItem last = 0;
-struct CommandItem first = 0;
+struct CommandItem* last = 0;
+struct CommandItem* first = 0;
 
 
 int command_registry_register(const char * name, Command cmd) {
     struct CommandItem* nextCmd = malloc (sizeof(struct CommandItem));
     nextCmd->cmd = cmd;
-    strncpy (nextCmd->name, name, MAX_NAME_LENGTH);
+    nextCmd->name = malloc(strlen(name)+1);
+    strcpy (nextCmd->name, name);
     nextCmd->next = 0;
 
     if (last == 0) {
@@ -23,7 +25,7 @@ int command_registry_register(const char * name, Command cmd) {
         last->next = nextCmd;
         last = nextCmd;
     }
-    
+
     return 0;    //TODO: verify if insert worked correctly
 }
 
@@ -37,7 +39,6 @@ int command_registry_unregister(const char * name) {
 
     if (cmdItr->next == 0) {    // If there is only one cmd in CommandItem we remove it
         cmdItr->cmd = 0;
-        cmdItr->name = 0;
         first = 0;
         last = 0;
         free(cmdItr);
@@ -70,11 +71,13 @@ int command_registry_unregister(const char * name) {
 
 Command command_registry_get(const char * name) {
     struct CommandItem* cmdItr = first;
+    if (first == 0) return 0;
     while (strcmp(cmdItr->name, name) != 0) {
         if (cmdItr->next == 0) {
-            return NULL;
+            return 0;
         }
         cmdItr = cmdItr->next;
     }
     return cmdItr->cmd;
 }
+
