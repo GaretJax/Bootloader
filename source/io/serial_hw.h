@@ -1,4 +1,7 @@
 
+/**
+ * The base address of the QSM register.
+ */
 #define QSM_BASE_ADDRESS 0xFFFC00
 
 /**
@@ -16,8 +19,10 @@ enum QSMCR {
  * Defines the QILR (QSM Interrupt level) register bit mask.
  */
 enum QILR {
-	ILQSPI = 0x3F - 0x7,
-	ILSCI = 0x7,
+	ILQSPI      = 3,
+	ILQSPI_MASK = 0x7 << ILQSPI,
+	ILSCI       = 0,
+	ILSCI_MASK  = 0x7 << ILSCI,
 };
 
 /**
@@ -91,6 +96,14 @@ struct QSM {
 	unsigned short int SCDR;
 };
 
+enum ParityConfig {
+	DISABLED,
+	EVEN,
+	ODD,
+};
 
-
+struct SerialConfig {
+	unsigned int baudrate;
+	enum ParityConfig parity;
+};
 
