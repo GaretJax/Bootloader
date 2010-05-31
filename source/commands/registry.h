@@ -10,6 +10,10 @@
 
 #pragma once
 
+/**
+ * Maximum length for a command name identifiyer
+ */
+#define MAX_NAME_LENGTH 50
 
 /**
  * The interface which all functions used as commands have to implement.
