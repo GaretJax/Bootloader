@@ -47,18 +47,18 @@ void install_periodic_interrupt(InterruptHandler handler, unsigned int interval)
 	currentInterval = interval;
 	currentTime = 0;
 	
-	// Register the interrupt handler
+	/* Register the interrupt handler */
 	install_interrupt(periodic_interrupt_handler, PERIODIC_INTERRUPT_HANDLER_INDEX);
 	
-	// Set the interrupt level
+	/* Set the interrupt level */
 	timer->PICR &= ~PIRQL_MASK;
 	timer->PICR |= PERIODIC_INTERRUPT_LEVEL << PIRQL;
 	
-	// Set the interrupt vector index
+	/* Set the interrupt vector index */
 	timer->PICR &= ~PIV_MASK;
 	timer->PICR |= PERIODIC_INTERRUPT_HANDLER_INDEX << PIV;
 	
-	// Calculate and set the prescaling and the modulus
+	/* Calculate and set the prescaling and the modulus */
 	char modulus = (PERIODIC_INTERRUPT_MIN_GRANULARITY * EXTAL_FREQUENCY) / (1000 * 4 * 1);
 	
 	timer->PITR = 0;

@@ -13,7 +13,7 @@ int vstorage_write(const char * buffer, void * relativeADR, int length){
     memcpy (dst, buffer, length);
     return 0;
 }
-int main(){
+int main5(){
     void * add = (void *)0x000A;
     char te[] = "Valeur en mémoire à l'adresse 10";
     vstorage_write(te,add,strlen(te)+1);

@@ -4,6 +4,7 @@
  * @author Yves Peissard
  */
 #include "dispatcher.h"
+#include <stdio.h>
 
 int command1(int argc, const char * argv[]) {
 	return 1;
@@ -21,7 +22,7 @@ int command4(int argc, const char * argv[]) {
 	return 4;
 }
 
-int main(int argc, const char *argv[]) {
+int main2(int argc, const char *argv[]) {
 
 	char* cmd = "command p1 p2 p3 p4";
 	int len1 = 5;
@@ -32,7 +33,7 @@ int main(int argc, const char *argv[]) {
 
 	int nbTokens = command_parse(cmd, tokens);
 
-	// Test command_parse 1
+	/* Test command_parse 1 */
 	if (nbTokens != 5) {
 		printf(
 				"Error at command_parse: Number of tokens found: %d, %d expected!\n",
@@ -47,7 +48,7 @@ int main(int argc, const char *argv[]) {
 		printf("command_parse with command p1 p2 p3 p4: OK\n");
 	}
 
-	// Test command_parse 2
+	/* Test command_parse 2 */
 	cmd = "command";
 	len1 = 1;
 	nbTokens = command_parse(cmd, tokens);
@@ -61,7 +62,7 @@ int main(int argc, const char *argv[]) {
 		printf("command_parse with command: OK\n");
 	}
 
-	// Test command_parse 3
+	/* Test command_parse 3 */
 	cmd = "command p1";
 	len1 = 2;
 	nbTokens = command_parse(cmd, tokens);
@@ -75,7 +76,7 @@ int main(int argc, const char *argv[]) {
 		printf("command_parse with command p1: OK\n");
 	}
 
-	// Test command_parse 4
+	/* Test command_parse 4 */
 	cmd = "";
 	len1 = 0;
 	nbTokens = command_parse(cmd, tokens);
@@ -88,13 +89,13 @@ int main(int argc, const char *argv[]) {
 		printf("command_parse with empty string: OK\n");
 	}
 
-	// Test command_dispatch 1
+	/* Test command_dispatch 1 */
 	int result = 0;
 	cmd = "command1 p1 p2 p3 p4";
 	argc = 5;
 
 	command_registry_register("command1", command1);
-	int numTokens = command_parse(cmd, argv);
+	command_parse(cmd, (char **) argv);
 	result = command_dispatch(5, argv);
 
 	if (result != 1) {
@@ -104,7 +105,7 @@ int main(int argc, const char *argv[]) {
 		printf("Error at command_dispatch: Command command1 not found");
 	}
 
-	// Test command_parse_and_dispatch 1
+	/* Test command_parse_and_dispatch 1 */
 	cmd = "command2 p1 p2 p3 p4";
 	command_registry_register("command2", command2);
 	result = command_parse_and_dispatch(cmd);
@@ -134,5 +135,6 @@ int main(int argc, const char *argv[]) {
 		printf("\n\nTest command_parse_and_dispatch passed successfully");
 	}
 
+	return 0;
 }
 

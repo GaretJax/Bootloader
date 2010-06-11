@@ -2,12 +2,12 @@
 #include <stdbool.h>
 
 #include "timer.h"
+#include "serial.h"
 
 bool timeout_elapsed = false;
 
 static void timeout_interrupt_handler() {
 	uninstall_periodic_interrupt();
-	
 	timeout_elapsed = true;
 }
 
@@ -16,7 +16,18 @@ int main (int argc, const char * argv[]) {
 	
 	printf("Waiting...\n");
 	
-	while (!timeout_elapsed) {}
+	while (!timeout_elapsed) {
+		if (serial_buffered_chars_count()) {
+			uninstall_periodic_interrupt();
+			timeout_elapsed = true;
+		}
+	}
+	
+	if (serial_buffered_chars_count()) {
+		/* Handle command */
+	} else {
+		/* Handle default action */
+	}
 	
 	printf("Done!");
 	

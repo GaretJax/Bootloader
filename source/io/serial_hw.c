@@ -40,22 +40,23 @@ static void serial_hw_interrupt_handler() {
 	bool error;
 	
 	while (qsm->SCSR & RDRF) {
-		// Register contains new data	
+		/* Register contains new data */
 		
 		if ((BUFFER_SIZE + stop - start) % BUFFER_SIZE == BUFFER_SIZE - 1) {
-			// Buffer is full
+			/* Buffer is full */
 			return;
 		}
 		
-		// Read the partiy error flag before the data, to prevent that we read the flag
-		// for the wrong data set
+		/* Read the partiy error flag before the data, to prevent that we read the flag
+		 * for the wrong data set
+		 */
 		error = qsm->SCSR & PF;
 		
-		// Save to the buffer
+		/* Save to the buffer */
 		buffer[stop] = (unsigned char) qsm->SCDR;
 		
 		if (!error) {
-			// Update the index (only if there were no errors)
+			/* Update the index (only if there were no errors) */
 			stop = (stop + 1) % BUFFER_SIZE;			
 		}
 	}
@@ -64,20 +65,20 @@ static void serial_hw_interrupt_handler() {
 static void serial_hw_init(unsigned int baudrate, bool parity_enabled, bool parity) {
 	qsm->QIVR = SERIAL_INTERRUPT_HANDLER_INDEX;
 	
-	// Set the interrupt level
+	/* Set the interrupt level */
 	qsm->QILR &= ~ILSCI_MASK;
 	qsm->QILR |= SERIAL_INTERRUPT_LEVEL << ILSCI;
 	
-	// Clear the SQPI interrupt level
+	/* Clear the SQPI interrupt level */
 	qsm->QILR &= ~ILQSPI_MASK;
 	
-	// Calculate and set the baudrate
+	/* Calculate and set the baudrate */
 	qsm->SCCR0 = (SYSTEM_CLOCK * 10 / (32 * baudrate) + 5) / 10;
 	
-	// Enable the reception interrupt, the transmission and the reception
+	/* Enable the reception interrupt, the transmission and the reception */
 	qsm->SCCR1 = RIE | TE | RE | (parity ? PT : 0) | (parity_enabled ? PE|M : 0);
 	
-	// Install the interrupt handler for the serial interface
+	/* Install the interrupt handler for the serial interface */
 	install_interrupt(serial_hw_interrupt_handler, SERIAL_INTERRUPT_HANDLER_INDEX);
 }
 
@@ -90,13 +91,13 @@ int serial_init(const void * config_struct) {
 }
 
 char serial_readchar() {
-	// Wait for a character to be present
+	/* Wait for a character to be present */
 	while (start == stop) {}
 	
-	// Read the character
+	/* Read the character */
 	char c = buffer[start];
 	
-	// Set the new buffer
+	/* Set the new buffer */
 	start = (start + 1) % BUFFER_SIZE;
 	
 	return c;
@@ -111,37 +112,37 @@ int serial_readline(char * buffer, const int buf_size) {
 	char c = 0;
 	
 	while (c != '\n') {
-		// Read the next char
+		/* Read the next char */
 		c = serial_readchar();
 		
-		// If we haven't reached the max length yet
+		/* If we haven't reached the max length yet */
 		if (length < buf_size) {
 			buffer[length] = c;
 			length++;
 		}
 	}
 	
-	// Delete the last char if it is a new line
+	/* Delete the last char if it is a new line */
 	if (buffer[length] == '\n') {
 		length--;
 	}
 	
-	// Delete the last char if it is a carriage return
+	/* Delete the last char if it is a carriage return */
 	if (buffer[length] == '\r') {
 		length--;
 	}
 	
-	// Terminate the string
+	/* Terminate the string */
 	buffer[length] = 0;
 	
 	return length;
 }
 
 void serial_writechar(const char c) {
-	// Wait for the register to be ready
+	/* Wait for the register to be ready */
 	while (!(qsm->SCSR & TDRE)) {}
 	
-	// Write the character
+	/* Write the character */
 	qsm->SCDR = c;
 }
 

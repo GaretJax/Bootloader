@@ -44,7 +44,7 @@ int command_parse(const char * cmd, char * args[]);
  *          error code if the command execution failed) or a negative error code
  *          if it was not possible to call the command.
  */
-int command_dispatch(int argc, char * argv[]);
+int command_dispatch(int argc, const char * argv[]);
 
 
 /**
