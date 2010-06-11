@@ -28,7 +28,9 @@ struct Config {
 	char app_1_name[APP_NAME_LENGTH];
 	int app_memory_address;
 
-} config;
+};
+
+extern struct Config config;
 
 
 /**
