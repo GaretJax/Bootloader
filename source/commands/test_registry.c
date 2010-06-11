@@ -21,7 +21,7 @@ int func4(int argc, const char * argv[]) {
 	return 0;
 }
 
-int main(int argc, const char *argv[]) {
+int main3(int argc, const char *argv[]) {
 	int numArgs = 4;
 	int errorCountTest1 = 0;
 	int errorCountTest2 = 0;
@@ -47,19 +47,19 @@ int main(int argc, const char *argv[]) {
 
 	Command cmd;
 
-	// Test 1 --------------------------------------------------------
-	// Do a get on an empty command registry
+	/* Test 1 --------------------------------------------------------
+	 * Do a get on an empty command registry
+	 */
 	printf("Test 1\n");
-	char* commandId = funcIds[0];
 	cmd = command_registry_get(funcIds[0]);
 	if (cmd == 0) {
 		printf("Get of empty command list: OK\n");
 	} else {
-		printf("Error: Get of empty command list returned %d, should be 0\n");
+		printf("Error: Get of empty command list returned %ld, should be 0\n", (long) cmd);
 		errorCountTest1++;
 	}
 
-	// Insert one command
+	/* Insert one command */
 	cmd = funcs[0];
 	int response = command_registry_register(funcIds[0], cmd);
 	if (response == 0) {
@@ -69,20 +69,20 @@ int main(int argc, const char *argv[]) {
 		errorCountTest1++;
 	}
 
-	// Get the inserted command
+	/* Get the inserted command */
 	cmd = command_registry_get(funcIds[0]);
 	if (cmd == &func1) {
 		printf("Get of %s OK\n", funcIds[0]);
 	} else {
-		printf("Error: Get of %s failed, cmd at %d and func1 at %d\n",
-				funcIds[0], cmd, &func1);
+		printf("Error: Get of %s failed, cmd at %ld and func1 at %ld\n",
+				funcIds[0], (long) cmd, (long) &func1);
 		errorCountTest1++;
 	}
 
-	// Remove inserted command
+	/* Remove inserted command */
 	response = command_registry_unregister(funcIds[0]);
 	if (response == 0) {
-		// Try to get removed command to be sure it was removed
+		/* Try to get removed command to be sure it was removed */
 		cmd = command_registry_get(funcIds[0]);
 		if (cmd == 0) {
 			printf("Remove of %s OK\n", funcIds[0]);
@@ -97,11 +97,11 @@ int main(int argc, const char *argv[]) {
 	}
 
 
-	// Test 2 --------------------------------------------------------
+	/* Test 2 -------------------------------------------------------- */
 	printf("\n\nTest 2:\n");
 	int i;
 
-	// Add all commands
+	/* Add all commands */
 	for (i = 0; i < numArgs; i++) {
 		response = command_registry_register(funcIds[i], funcs[i]);
 		if (response == 0) {
@@ -112,22 +112,22 @@ int main(int argc, const char *argv[]) {
 		}
 	}
 
-	// Get all commands
+	/* Get all commands */
 	for (i = 0; i < numArgs; i++) {
 		cmd = command_registry_get(funcIds[i]);
 		if (cmd == funcs[i]) {
 			printf("Get of %s OK\n", funcIds[i]);
 		} else {
-			printf("Error: Get of %s failed, cmd at %d and func1 at %d\n",
-					funcIds[i], cmd, funcs[i]);
+			printf("Error: Get of %s failed, cmd at %ld and func1 at %ld\n",
+					funcIds[i], (long) cmd, (long) funcs[i]);
 			errorCountTest2++;
 		}
 	}
 
-	// Remove last inserted command
+	/* Remove last inserted command */
 	response = command_registry_unregister(funcIds[numArgs - 1]);
 	if (response == 0) {
-		// Try to get removed command to be sure it was removed
+		/* Try to get removed command to be sure it was removed */
 		cmd = command_registry_get(funcIds[numArgs - 1]);
 		if (cmd == 0) {
 			printf("Remove of %s OK\n", funcIds[numArgs - 1]);

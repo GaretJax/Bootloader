@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdlib.h>
 #include "registry.h"
 
 struct CommandItem {
@@ -12,7 +13,7 @@ struct CommandItem* first = 0;
 
 
 int command_registry_register(const char * name, Command cmd) {
-    struct CommandItem* nextCmd = malloc (sizeof(struct CommandItem));
+    struct CommandItem* nextCmd = malloc(sizeof(struct CommandItem));
     nextCmd->cmd = cmd;
     nextCmd->name = malloc(strlen(name)+1);
     strcpy (nextCmd->name, name);
@@ -26,7 +27,7 @@ int command_registry_register(const char * name, Command cmd) {
         last = nextCmd;
     }
 
-    return 0;    //TODO: verify if insert worked correctly
+    return 0;    /* TODO: verify if insert worked correctly */
 }
 
 
@@ -34,25 +35,25 @@ int command_registry_unregister(const char * name) {
     struct CommandItem* cmdItr = first;
 
     if (first == 0) {
-        return 1;    // No command found
+        return 1;    /* No command found */
     }
 
-    if (cmdItr->next == 0) {    // If there is only one cmd in CommandItem we remove it
+    if (cmdItr->next == 0) {    /* If there is only one cmd in CommandItem we remove it */
         cmdItr->cmd = 0;
         first = 0;
         last = 0;
         free(cmdItr);
-        return 0;    //TODO: verify if insert worked correctly
+        return 0;    /* TODO: verify if insert worked correctly */
     }
 
-    if (strcmp(cmdItr->name, name) == 0) {    // If we remove first element
+    if (strcmp(cmdItr->name, name) == 0) {    /* If we remove first element */
         first = cmdItr->next;
         free(cmdItr);
     }
 
     while (strcmp(cmdItr->next->name, name) != 0) {
         if (cmdItr->next == 0) {
-            return 1;    // No command found
+            return 1;    /* No command found */
         }
         cmdItr = cmdItr->next;
     }
@@ -61,12 +62,12 @@ int command_registry_unregister(const char * name) {
         last = cmdItr;
         cmdItr->next = 0;
         free(cmdItr->next);
-        return 0;    //TODO: verify if insert worked correctly
+        return 0;    /* TODO: verify if insert worked correctly */
     }
 
     cmdItr->next = cmdItr->next->next;
     free(cmdItr->next);
-    return 0;    //TODO: verify if insert worked correctly
+    return 0;    /* TODO: verify if insert worked correctly */
 }
 
 Command command_registry_get(const char * name) {

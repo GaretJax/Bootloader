@@ -42,7 +42,7 @@ int count() {
     fclose(fichier);
     return count;
 }
-int main(){
+int main4(){
 
     void * add = (void *)0x000A;
     char te[] = "Valeur en mémoire à l'adresse 1";
