@@ -32,7 +32,7 @@ volatile struct QSM * qsm = (struct QSM *) QSM_BASE_ADDRESS;
 
 static unsigned int start = 0;
 static unsigned int stop  = 0;
-static unsigned char buffer[BUFFER_SIZE];
+static unsigned char input_buffer[BUFFER_SIZE];
 
 #pragma interrupt on
 
@@ -53,7 +53,7 @@ static void serial_hw_interrupt_handler() {
 		error = qsm->SCSR & PF;
 		
 		/* Save to the buffer */
-		buffer[stop] = (unsigned char) qsm->SCDR;
+		input_buffer[stop] = (unsigned char) qsm->SCDR;
 		
 		if (!error) {
 			/* Update the index (only if there were no errors) */
@@ -91,11 +91,13 @@ int serial_init(const void * config_struct) {
 }
 
 char serial_readchar() {
+	char c;
+	
 	/* Wait for a character to be present */
 	while (start == stop) {}
 	
 	/* Read the character */
-	char c = buffer[start];
+	c = input_buffer[start];
 	
 	/* Set the new buffer */
 	start = (start + 1) % BUFFER_SIZE;

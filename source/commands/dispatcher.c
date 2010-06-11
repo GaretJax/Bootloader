@@ -19,20 +19,24 @@ int command_parse(const char * cmd, char * args[]) {
 }
 
 int command_dispatch(int argc, const char * argv[]) {
+	const char * cmd_name;
+	Command cmd;
+	int error;
+	
     if (argv[0] == 0) {
         return -1;
     }
-    const char* cmdName = argv[0];
-    Command cmd = command_registry_get(cmdName);
-    int error = cmd(argc, argv);
+    cmd_name = argv[0];
+    cmd = command_registry_get(cmd_name);
+    error = cmd(argc, argv);
     return error;
 }
 
 int command_parse_and_dispatch(const char * cmd) {
     char* args[MAX_ARGC];
     int tokens = command_parse(cmd, args);
+	
     if (tokens == -1) return -1;
-    int dispatchError = command_dispatch(tokens, (const char **) args);
-    return dispatchError;
+    return command_dispatch(tokens, (const char **) args);
 }
 

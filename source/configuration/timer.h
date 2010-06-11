@@ -19,7 +19,7 @@ enum PICR {
 enum PITR {
 	PTP	     = 1<<8,
 	PTM      = 0,
-	PTM_MASK = 0xFF << PTM,
+	PTM_MASK = 0xFF << PTM
 };
 
 

@@ -12,7 +12,7 @@ enum QSMCR {
 	FRZ1 = 1<<14,
 	FRZ0 = 1<<13,
 	SUPV = 1<<7,
-	IARB = 0xF,
+	IARB = 0xF
 };
 
 /**
@@ -22,14 +22,14 @@ enum QILR {
 	ILQSPI      = 3,
 	ILQSPI_MASK = 0x7 << ILQSPI,
 	ILSCI       = 0,
-	ILSCI_MASK  = 0x7 << ILSCI,
+	ILSCI_MASK  = 0x7 << ILSCI
 };
 
 /**
  * Defines the SCCR0 (SCI Control 0) register bit mask.
  */
 enum SCCR0 {
-	SCBR = 0x1FFF,
+	SCBR = 0x1FFF
 };
 
 /**
@@ -50,7 +50,7 @@ enum SCCR1 {
 	TE    = 1<<3,
 	RE    = 1<<2,
 	RWU   = 1<<1,
-	SBK   = 1<<0,
+	SBK   = 1<<0
 };
 
 /**
@@ -65,7 +65,7 @@ enum SCSR {
 	OR   = 1<<3,
 	NF   = 1<<2,
 	FE   = 1<<1,
-	PF   = 1<<0,
+	PF   = 1<<0
 };
 
 /**
@@ -80,7 +80,7 @@ enum SCDR {
 	RT3 = 1<<3,
 	RT2 = 1<<2,
 	RT1 = 1<<1,
-	RT0 = 1<<0,	
+	RT0 = 1<<0
 };
 
 
@@ -99,7 +99,7 @@ struct QSM {
 enum ParityConfig {
 	DISABLED,
 	EVEN,
-	ODD,
+	ODD
 };
 
 struct SerialConfig {

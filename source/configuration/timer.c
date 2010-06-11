@@ -43,6 +43,8 @@ void periodic_interrupt_handler() {
 }
 
 void install_periodic_interrupt(InterruptHandler handler, unsigned int interval) {
+	char modulus;
+	
 	currentHandler = handler;
 	currentInterval = interval;
 	currentTime = 0;
@@ -59,7 +61,7 @@ void install_periodic_interrupt(InterruptHandler handler, unsigned int interval)
 	timer->PICR |= PERIODIC_INTERRUPT_HANDLER_INDEX << PIV;
 	
 	/* Calculate and set the prescaling and the modulus */
-	char modulus = (PERIODIC_INTERRUPT_MIN_GRANULARITY * EXTAL_FREQUENCY) / (1000 * 4 * 1);
+	modulus = (char) ((int) PERIODIC_INTERRUPT_MIN_GRANULARITY * (int) EXTAL_FREQUENCY) / (1000 * 4 * 1);
 	
 	timer->PITR = 0;
 	timer->PITR  = modulus << PTM;
