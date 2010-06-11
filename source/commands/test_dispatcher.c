@@ -30,6 +30,7 @@ int main2(int argc, const char *argv[]) {
 	int nbErrorsDispatch = 0;
 	int nbErrorsParseDispatch = 0;
 	char * tokens[MAX_ARGC];
+	int result = 0;
 
 	int nbTokens = command_parse(cmd, tokens);
 
@@ -90,7 +91,7 @@ int main2(int argc, const char *argv[]) {
 	}
 
 	/* Test command_dispatch 1 */
-	int result = 0;
+	result = 0;
 	cmd = "command1 p1 p2 p3 p4";
 	argc = 5;
 

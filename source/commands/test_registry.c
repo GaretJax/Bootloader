@@ -22,30 +22,31 @@ int func4(int argc, const char * argv[]) {
 }
 
 int main3(int argc, const char *argv[]) {
-	int numArgs = 4;
+#define NUM_ARGS 4
 	int errorCountTest1 = 0;
 	int errorCountTest2 = 0;
+	int response;
+	int i;
+	Command cmd;
 
-
-	char* args[numArgs];
+	char* args[NUM_ARGS];
+	char* funcIds[NUM_ARGS];
+	Command funcs[NUM_ARGS];
+	
 	args[0] = "arg1";
 	args[1] = "arg2";
 	args[2] = "arg3";
 	args[3] = "arg4";
 
-	char* funcIds[numArgs];
 	funcIds[0] = "func1";
 	funcIds[1] = "func2";
 	funcIds[2] = "func3";
 	funcIds[3] = "func4";
 
-	Command funcs[numArgs];
 	funcs[0] = func1;
 	funcs[1] = func2;
 	funcs[2] = func3;
 	funcs[3] = func4;
-
-	Command cmd;
 
 	/* Test 1 --------------------------------------------------------
 	 * Do a get on an empty command registry
@@ -61,7 +62,7 @@ int main3(int argc, const char *argv[]) {
 
 	/* Insert one command */
 	cmd = funcs[0];
-	int response = command_registry_register(funcIds[0], cmd);
+	response = command_registry_register(funcIds[0], cmd);
 	if (response == 0) {
 		printf("Insert of %s OK\n", funcIds[0]);
 	} else {
@@ -99,10 +100,9 @@ int main3(int argc, const char *argv[]) {
 
 	/* Test 2 -------------------------------------------------------- */
 	printf("\n\nTest 2:\n");
-	int i;
 
 	/* Add all commands */
-	for (i = 0; i < numArgs; i++) {
+	for (i = 0; i < NUM_ARGS; i++) {
 		response = command_registry_register(funcIds[i], funcs[i]);
 		if (response == 0) {
 			printf("Insert of %s OK\n", funcIds[i]);
@@ -113,7 +113,7 @@ int main3(int argc, const char *argv[]) {
 	}
 
 	/* Get all commands */
-	for (i = 0; i < numArgs; i++) {
+	for (i = 0; i < NUM_ARGS; i++) {
 		cmd = command_registry_get(funcIds[i]);
 		if (cmd == funcs[i]) {
 			printf("Get of %s OK\n", funcIds[i]);
@@ -125,19 +125,19 @@ int main3(int argc, const char *argv[]) {
 	}
 
 	/* Remove last inserted command */
-	response = command_registry_unregister(funcIds[numArgs - 1]);
+	response = command_registry_unregister(funcIds[NUM_ARGS - 1]);
 	if (response == 0) {
 		/* Try to get removed command to be sure it was removed */
-		cmd = command_registry_get(funcIds[numArgs - 1]);
+		cmd = command_registry_get(funcIds[NUM_ARGS - 1]);
 		if (cmd == 0) {
-			printf("Remove of %s OK\n", funcIds[numArgs - 1]);
+			printf("Remove of %s OK\n", funcIds[NUM_ARGS - 1]);
 		}
 	} else if (response < 0) {
-		printf("Error: Could not unregister command %s", funcIds[numArgs - 1]);
+		printf("Error: Could not unregister command %s", funcIds[NUM_ARGS - 1]);
 		errorCountTest2++;
 	} else if (response > 0) {
 		printf("Error: Command %s could not be found. Can not unregister",
-				funcIds[numArgs - 1]);
+				funcIds[NUM_ARGS - 1]);
 		errorCountTest2++;
 	}
 
