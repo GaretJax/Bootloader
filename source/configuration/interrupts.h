@@ -3,7 +3,7 @@
 /**
  * The base address of the vector table.
  */
-#define VBR_ADDRESS 0x10000
+#define VBR_ADDRESS 0x100000
 
 /**
  * The length of the vector base register, or the maximum allowed index to store

@@ -62,6 +62,8 @@ static void serial_hw_interrupt_handler() {
 	}
 }
 
+#pragma interrupt off
+
 static void serial_hw_init(unsigned int baudrate, bool parity_enabled, bool parity) {
 	qsm->QIVR = SERIAL_INTERRUPT_HANDLER_INDEX;
 	

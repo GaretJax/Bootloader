@@ -5,7 +5,7 @@
 /**
  * The granularity of the timer
  */
-#define PERIODIC_INTERRUPT_MIN_GRANULARITY 20
+#define PERIODIC_INTERRUPT_MIN_GRANULARITY 20ul
 
 #define TIMER_BASE_ADDRESS 0xFFFA22
 

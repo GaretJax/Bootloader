@@ -24,7 +24,7 @@ int main (int argc, const char * argv[]) {
 	}
 	
 	if (serial_buffered_chars_count()) {
-		/* Handle command */
+		/* Handle given command */
 	} else {
 		/* Handle default action */
 	}
