@@ -20,7 +20,7 @@
  *
  * @param[out] buffer   The pointer to a char buffer where the read data has to
  *                      be written.
- * @param[in]  address  The address from which to start to read from the storage
+ * @param[in]  block    Block from which to start to read from the storage
  *                      device.
  * @param[in]  length   The number of bytes to read from the storage device,
  *                      starting at the given address.
@@ -38,7 +38,7 @@ int pstorage_read(char * buffer, int block, int length);
  *
  * @param[out] buffer   The pointer to a char buffer from where the data to
  *                      write has to be read.
- * @param[in]  address  The address from which to start to write to the storage
+ * @param[in]  block    Block from which to start to write to the storage
  *                      device.
  * @param[in]  length   The number of bytes to write to the storage device,
  *                      starting at the given address.
