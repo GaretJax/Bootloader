@@ -25,6 +25,7 @@
 enum APPLICATION_ID {
     APP_0,
     APP_1,
+    APP_Count
 };
 
 
@@ -62,7 +63,7 @@ int application_run();
  * @return  0 if the operation completed successfully, an error code otherwise.
  */
 int application_add(enum APPLICATION_ID appid, const char * name,
-                    const char * buffer);
+                    const char * buffer,int length);
 
 
 /**

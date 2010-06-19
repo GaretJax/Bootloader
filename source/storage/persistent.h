@@ -45,7 +45,7 @@ int pstorage_read(char * buffer, void * address, int length);
  *
  * @return  The number of bytes written, a negative number if an error occurred.
  */
-int pstorage_write(const char * buffer, void * address, int length);
+int pstorage_write(const char * buffer, int  * address, int length);
 
 
 /**
