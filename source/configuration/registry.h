@@ -10,24 +10,37 @@
 
 
 #pragma once
+<<<<<<< HEAD
+#include "../storage/persistent.h"
+#include <stdbool.h>
+
+=======
 //#include "../storage/persistent.h"
+>>>>>>> ce17e1e6c2b404472371cd1570764ecb3f33e3cf
 
 /**
  * Maximum length for an application name identifier
  */
 #define APP_NAME_LENGTH 50
 
+
 /**
  * Defines the different available configuration directives. This structure is
  * saved and loaded to flash memory with the methods config_load() and config_save()
  */
-struct Config {
-	int app_0_flash_address;
-	int app_1_flash_address;
-	char app_0_name[APP_NAME_LENGTH];
-	char app_1_name[APP_NAME_LENGTH];
-	int app_memory_address;
 
+/* The prams of an aplication*/
+struct APP_CONFIG {
+	int flashBlock;/* The block where the application is saved in the flash memory*/
+	char app_name[APP_NAME_LENGTH];
+	int length;
+	bool isEnable;
+};
+struct Config {
+	struct APP_CONFIG apps_config[] = {
+			{ 1 , {'A','p','1'} ,0,false},
+			{ 10 , {'A','p','2'},0,false}
+	};
 };
 
 extern struct Config config;
