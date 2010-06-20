@@ -10,13 +10,9 @@
 
 
 #pragma once
-<<<<<<< HEAD
 #include "../storage/persistent.h"
 #include <stdbool.h>
-
-=======
 //#include "../storage/persistent.h"
->>>>>>> ce17e1e6c2b404472371cd1570764ecb3f33e3cf
 
 /**
  * Maximum length for an application name identifier
