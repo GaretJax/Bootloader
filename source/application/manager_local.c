@@ -1,9 +1,8 @@
 /*
  * manager_local.c
- *
+ *	The application manager on a PC.
  *  Created on: Jun 11, 2010
  *      Author: Elias Medawar
- *
  * 	//TODO: Test this module
  */
 #pragma once

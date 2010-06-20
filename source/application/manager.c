@@ -11,7 +11,7 @@
 #include "../storage/persistent.h"
 #include "../configuration/registry.h"
 
-enum APPLICATION_ID crntLoaded;
+enum APPLICATION_ID crntLoaded =-1;
 
 typedef void(* Application);
 
@@ -23,12 +23,15 @@ int application_load(APPLICATION_ID appid) {
 				config.apps_config[crntLoaded].length);
 		return 0;
 	} else {
-		printf("Error the application is not enable ");
 		return -1;
 	}
 }
 
 int application_run() {
+	if(crntLoaded == -1){
+		return -1;
+	}
+	typedef void(* Application);
 	 Application app = (Application)(APP_BASE_ADDRESS);
 	 app();
 	 return 0;
@@ -43,7 +46,11 @@ int application_add(enum APPLICATION_ID appid, const char * name,
 }
 
 int application_remove(enum APPLICATION_ID appid) {
-	config.apps_config[appid].isEnable = false;
+	if(config.apps_config[appid].isEnable){
+		config.apps_config[appid].isEnable = false;
+		return 0;
+	}
+	return -1;
 }
 
 int application_rename(enum APPLICATION_ID appid, const char * name) {
