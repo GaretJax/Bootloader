@@ -9,7 +9,7 @@
  * Drives (i.e. for development/testing purposes).
  */
 
-
+#include "../configuration/hardware.h"
 #pragma once
 
 

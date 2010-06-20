@@ -1,7 +1,16 @@
+/*
+ * volatile_hdd.c
+ *
+ *	Simulate the volatile memory using a file to save the data
+ *  Created on: Mai 8, 2010
+ *      Author: Elias Medawar
+ *
+ */
 #include <stdio.h> 
 #include <stdlib.h>
 #include <string.h>
 #include "./volatile.h"
+
 int vstorage_read(char * buffer,const void * address, int length){
     FILE* fichier = fopen("./hdd.ram", "rb+");
     fseek(fichier,address, SEEK_SET);
@@ -42,15 +51,4 @@ int count() {
     fclose(fichier);
     return count;
 }
-int main4(){
 
-    void * add = (void *)0x000A;
-    char te[] = "Valeur en mémoire à l'adresse 1";
-    vstorage_write(te,add,strlen(te)+1);
-    add = (void *)0x002A;
-    char te2[] = "Valeur à l'adresse 42";
-    add = (void *)0x000A;
-    vstorage_read(&te2,add,strlen(te2)+1);
-    printf("Read %s",te2);
-    return 0;
-}

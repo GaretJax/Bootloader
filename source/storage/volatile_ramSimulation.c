@@ -1,3 +1,12 @@
+/*
+ * volatile_ramSimulation.c
+ *
+ *	Simulate the volatile memory using an array of char to save the data.
+ *	This file can bee used on a the PC or on the microchip
+ *  Created on: Mai 8, 2010
+ *      Author: Elias Medawar
+ *
+ */
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <string.h>
